@@ -1,0 +1,87 @@
+
+@font-face {
+    font-family: 'neuzeit_groteskregular';
+    src: url('neuzeitgro-reg-webfont.eot');
+    src: url('neuzeitgro-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('neuzeitgro-reg-webfont.woff2') format('woff2'),
+         url('neuzeitgro-reg-webfont.woff') format('woff'),
+         url('neuzeitgro-reg-webfont.ttf') format('truetype'),
+         url('neuzeitgro-reg-webfont.svg#neuzeit_groteskregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oswaldbook';
+    src: url('oswald-regular-webfont.eot');
+    src: url('oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('oswald-regular-webfont.woff2') format('woff2'),
+         url('oswald-regular-webfont.woff') format('woff'),
+         url('oswald-regular-webfont.ttf') format('truetype'),
+         url('oswald-regular-webfont.svg#oswaldbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+        font-family: 'source_code_proregular';
+    src: url('sourcecodepro-regular-webfont.eot');
+    src: url('sourcecodepro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('sourcecodepro-regular-webfont.woff2') format('woff2'),
+         url('sourcecodepro-regular-webfont.woff') format('woff'),
+         url('sourcecodepro-regular-webfont.ttf') format('truetype'),
+         url('sourcecodepro-regular-webfont.svg#source_code_proregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+// @font-face {
+//   font-family: "SSSocialRegular";
+//   src: url('../dev/scss/_fonts/ss-socialregular.eot');
+//   src: url('../dev/scss/_fonts/ss-socialregular.eot?#iefix') format('embedded-opentype'),
+//        url('../dev/scss/_fonts/ss-socialregular.woff') format('woff'),
+//        url('../dev/scss/_fonts/ss-socialregular.ttf')  format('truetype'),
+//        url('../dev/scss/_fonts/ss-socialregular.svg#SSStandard') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+//   text-decoration: none;
+//   text-rendering: optimizeLegibility;
+//   white-space: nowrap;
+//   /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+//   -moz-font-feature-settings: "liga=1";
+//   -moz-font-feature-settings: "liga";
+//   -ms-font-feature-settings: "liga" 1;
+//   -o-font-feature-settings: "liga";
+//   font-feature-settings: "liga";
+//   -webkit-font-smoothing: antialiased;
+// }
+
+// This triggers a redraw in IE to Fix IE8's :before content rendering.
+// html:hover [class^="ss-"]{-ms-zoom: 1;}
+
+// .ss-icon, .ss-icon.ss-social-regular,
+// [class^="ss-"]:before, [class*=" ss-"]:before,
+// [class^="ss-"].ss-social-regular:before, [class*=" ss-"].ss-social-regular:before,
+// [class^="ss-"].right:after, [class*=" ss-"].right:after,
+// [class^="ss-"].ss-social-regular.right:after, [class*=" ss-"].ss-social-regular.right:after {
+//   font-family: "SSSocialRegular";
+//   font-style: normal;
+//   font-weight: normal;
+//   text-decoration: none;
+//   text-rendering: optimizeLegibility;
+//   white-space: nowrap;
+//   /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+//   -moz-font-feature-settings: "liga=1";
+//   -moz-font-feature-settings: "liga";
+//   -ms-font-feature-settings: "liga" 1;
+//   -o-font-feature-settings: "liga";
+//   font-feature-settings: "liga";
+//   -webkit-font-smoothing: antialiased;
+// }
+
+// [class^="ss-"].right:before,
+// [class*=" ss-"].right:before{display:none;content:'';}
+
+
+
+

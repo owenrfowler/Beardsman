@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+
+  {% include 'html-head' %}
+  <!-- content for header start -->
+  {{ content_for_header }}
+  <!-- content for header end -->
+
+</head>
+
+{% comment %}{% assign pageID = page.handle %}
+{% unless page.handle %}
+  {% assign pageID = page_title %}
+{% endunless %}{% endcomment %}
+
+<body>
+  <div id="canvas">
+
+    {% include 'page-header' %} 
+
+    {{ content_for_layout }}
+
+    <div id="featured-products">
+{% comment %}      <div class="product">
+        <img src="assets/product.jpg" alt="" />
+        <p class="product-tag">
+          something beard oil (30ml)
+        </p>
+        <p class="list-price">
+          &pound;24.99
+        </p>
+      </div>{% endcomment %}
+    </div>
+
+    {% include 'page-footer' %}

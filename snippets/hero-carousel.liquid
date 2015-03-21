@@ -1,0 +1,31 @@
+{% if settings.show_carousel %}
+
+  <div id="hero">
+
+    {% if settings.show_carousel_item_1 %}
+    <div 
+      class="slide {% if settings.carousel_item_1_contrast == 'dark' %}dark{% endif %}"
+      style="background-image: url({{ 'carousel-item-1.jpg' | asset_url }})">
+      <div class="text">
+        <h3>{{ settings.carousel_item_1_message }}</h3>
+        <p>Paragraph tagline</p>
+        <a href="{{ settings.carousel_item_1_link }}">shop now</a>
+      </div>
+    </div> 
+    {% endif %}
+
+    {% if settings.show_carousel_item_2 %}
+    <div 
+      class="slide {% if settings.carousel_item_2_contrast == 'dark' %}dark{% endif %}"
+      style="background-image: url({{ 'carousel-item-2.jpg' | asset_url }})">
+      <div class="text">
+        <h3>{{ settings.carousel_item_2_message }}</h3>
+        <p>{{ settings.carousel_item_2_title }}</p>
+        <a href="{{ settings.carousel_item_2_link }}">shop now</a>
+      </div>
+    </div> 
+    {% endif %}
+    
+  </div><!-- hero -->
+
+{% endif %} 
