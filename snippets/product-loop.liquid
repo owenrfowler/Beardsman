@@ -11,13 +11,13 @@
 <div class="product {{ product_span_size }}">
 
   <div class="image">
-    <a href="{{ url }}">          
+    <a href="{{ product.url }}">          
       <img src="{% if product.images.size >= 1%}{{ product.featured_image | product_img_url: 'large' }}{% else %}{{ 'No_Image_2.png' | asset_url }}{% endif %}" alt="{{ product.title | escape  }}" />
     </a>
   </div>
 
   <div class="product-details">
-    <a href="{{ url }}" class="clearfix">
+    <a href="{{ product.url }}" class="clearfix">
       <h4 class="product-tag">{{ product.title }}</h4>
 
       <p class="list-price">

@@ -1,0 +1,144 @@
+  .divide {
+    @include gridle(12);
+    .content {
+      border-top: 1px solid #e1e1df;
+      line-height: 1px;  
+    }
+  }
+
+  footer {
+    overflow: hidden;
+    @include gridle(12);
+    @include gridle_parent();
+    padding: 46px 0;
+
+    h3 {
+      margin: 0 0 14px;
+      font: normal 14px 'oswaldbook';
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .footer-nav,
+    .connect {
+      @include gridle(3);
+
+      ul {
+        margin: -1px 0 0;
+         li {
+          font-size: 14px;
+          line-height: 24px;
+
+          a {
+            color: #272727;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .footer-nav ul li {
+      font-size: 13px;
+    }
+    .connect {
+
+      ul li {
+        overflow: hidden;
+
+        &:before {
+          float: left;
+          padding: 1px 10px 0 0;
+          color: #8f8f8f;
+          font-size: 13px;
+          font-family: "SSSocialRegular";
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: none;
+          text-rendering: optimizeLegibility;
+          white-space: nowrap;
+          /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+          -moz-font-feature-settings: "liga=1";
+          -moz-font-feature-settings: "liga";
+          -ms-font-feature-settings: "liga" 1;
+          -o-font-feature-settings: "liga";
+          font-feature-settings: "liga";
+          -webkit-font-smoothing: antialiased;
+
+          a {
+            float: left;
+          }  
+        }
+        &.facebook:before {
+          content: 'facebook';
+        }
+        &.pinterest:before {
+          content: 'pinterest';
+        }
+        &.twitter:before {
+          content: 'twitter';
+        }
+      }
+    }
+
+    #mail-list {
+      @include gridle(6);
+
+      p {
+        font-size: 13px;
+        line-height: 22px;
+      }
+      form {
+        overflow: hidden;
+        margin: 18px 0 0;
+
+        input[type=text]{
+          float: left;
+          padding: 0 0 0 10px;
+          width: 280px;
+          height: 40px;
+          border: 1px solid $divider;
+          border-radius: 2px;
+          font: 14px/24px 'source_code_proregular';
+          outline: none;
+          box-sizing: border-box;
+          &:focus {
+            border: 1px solid #272727;
+          }
+        }
+        button {
+          margin: 0 0 0 10px;
+          width: 130px;
+          height: 40px;
+          background-color: #272727;
+          border: 1px solid #272727;
+          color: #fff;
+          font: normal 13px 'oswaldbook';
+          text-align: center;
+          text-transform: uppercase;
+          cursor: pointer;
+          box-sizing: border-box;
+          -moz-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+          -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+          transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+
+          &:hover {
+
+            background-color: #fff;
+            color: #272727;
+          }
+        }
+      }
+    }
+  }
+  #foot-notes {
+    @include gridle(12);
+    
+    display: block;
+    margin: 39px 0 40px;
+    p {
+      float: left;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    img {
+      float: right;
+    }
+  }
