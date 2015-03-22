@@ -23,125 +23,164 @@ $divider: #e1e1df;
 }
 
 body {
-  margin: 40px 0 0;
   width: 100%;
   background: #fff;
   font-family: 'source_code_proregular';
   color: #272727;
 }
 
-#canvas {
+  // Page Layout
+
+#page {
   display: block;
   overflow: hidden;
   margin: 0 auto;
-  width: 1160px;
- } 
-  header {
-    overflow: hidden;
-    @include gridle(12);
+}
+#body {
+  margin: 40px 0;
+}
 
-    #header-top {
-      overflow: hidden;
-      padding: 0 0 35px;
-      border-bottom: 1px solid #e3e3e3;
+.content {
+  @include gridle_centered ( );
+  max-width: 1160px;
+}
+
+#page-header {
+  
+  h1 {
+
+  }
+}
+
+#page-body {
+  overflow: hidden;
+
+  .content {
+
+  }
+  #page_content {
+    @include gridle(12);
+  }
+}
+
+header {
+  overflow: hidden;
+
+  .content {
+    overflow: hidden;
+  }
+  .header {
+    @include gridle(12);  
+  }
+  #header-top {
+    overflow: hidden;
+    padding: 30px 0 30px;
+    border-bottom: 1px solid #e3e3e3;
+
+    a {
+      text-decoration: none;
+    }
+
+    #logo {
+      float: left;
+      font: normal 36px 'neuzeit_groteskregular';
+      line-height: 41px;
+      color: #272727;
 
       a {
-        text-decoration: none;
+        color: inherit;
+      }
+    }
 
+    #status {
+      overflow: hidden;
+      float: right;
+      #login {
+        display: inline-block;
+        float: left;
+        margin: 15px 0 0;
+        color: inherit;
+        font-size: 14px;
       }
 
-      #logo {
+      #cart {
+        overflow: hidden;
+        display: inline-block;
         float: left;
-        font: normal 36px 'neuzeit_groteskregular';
-        color: #272727;
+        padding: 9px 18px 8px 20px;
+        border: 1px solid #e1e1df;
+        box-sizing: border-box;
+        @include border-radius (3px);
+
+        .cart-link {
+          text-transform: uppercase;
+          font: normal 14px 'oswaldbook';
+          letter-spacing: 2px;
+          color: #272727;
+
+          .icon-cart {
+            color: #8f8f8f;
+            font-family: "SSStandard";
+            font-size: 12px;
+          }
+          #cart-count {
+
+          }
+        }
+      }
+    }
+  }
+
+  #header-bottom {
+    overflow: hidden;
+    padding: 20px 0;
+
+    #nav {
+      float: left;
+      // @include gridle(8);
+      // @include gridle-no-gutter;
+      list-style: none;
+      
+      li {
+        display: inline-block;
+        margin: 0 40px 0 0;
+
+        &:last-child {
+          margin: 0;
+        }
 
         a {
-          color: inherit;
-        }
-      }
-
-      #status {
-        overflow: hidden;
-        float: right;
-        #login {
-          display: inline-block;
-          float: left;
-          color: inherit;
-        }
-
-        #cart {
-          display: inline-block;
-          overflow: hidden;
-          padding: 9px 18px 8px 20px;
-          border: 1px solid #e1e1df;
-          box-sizing: border-box;
-          @include border-radius (3px);
-
-          .cart-link {
-            text-transform: uppercase;
-            font: normal 14px 'oswaldbook';
-            letter-spacing: 2px;
-            color: #272727;
-
-            .icon-cart {
-              color: #8f8f8f;
-              font-family: "SSStandard";
-              font-size: 12px;
-            }
-            #cart-count {
-
-            }
+          color: #272727;
+          font: normal 14px 'oswaldbook';
+          text-transform: uppercase;
+          text-decoration: none;
+          letter-spacing: 2px;
+          &:active {
+            color: #929292;
           }
         }
       }
     }
-
-    #header-bottom {
+    #ship-rates {
       overflow: hidden;
-      padding: 20px 0;
+      float: right;
 
-      #nav {
+      img {
+        display: inline-block;
         float: left;
-        // @include gridle(8);
-        // @include gridle-no-gutter;
-        list-style: none;
-        
-        li {
-          display: inline-block;
-          margin: 0 40px 0 0;
-
-          a {
-            color: #272727;
-            font: normal 14px 'oswaldbook';
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 2px;
-            &:active {
-              color: #929292;
-            }
-          }
-        }
       }
-      #ship-rates {
-        overflow: hidden;
-        float: right;
-
-        img {
-          display: inline-block;
-          float: left;
-        }
-        p {
-          display: inline-block;
-          margin: 4px 0 0 10px;
-          font-size: 14px;
-          
-          span {
-            font-weight: 700;
-          }
+      p {
+        display: inline-block;
+        margin: 4px 0 0 10px;
+        font-size: 14px;
+        
+        span {
+          font-weight: 700;
         }
       }
     }
-  } // header
+  }
+} // header
 
   #hero {
     @include gridle(12);
@@ -167,6 +206,9 @@ body {
     }
   }
 
+
+
+
   .product-grid {
     @include gridle(12);
     @include gridle_parent();
@@ -180,11 +222,12 @@ body {
     letter-spacing: 1px;
 
     img {
-      margin: 0 0 12px;
+      width: 100%;
+      height: 100%;
     }
     p {
       &.product-tag {
-        margin: 0 0 3px;
+        margin: 12px 0 3px;
         font: normal 14px 'oswaldbook';
         text-transform: uppercase;
       }

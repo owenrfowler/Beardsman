@@ -1,11 +1,18 @@
-<div id="collection">
+<div id="page-header">
+  <div class="content">
+    <div class="introduction">
 
-  {% paginate collection.products by settings.pagination_limit %}
+      <h1>{{ collection.title }}</h1>
+
+    </div>
+  
   <!-- Begin collection info -->
-  <div class="row">
-    <div class="span12">
-
+  </div>
+</div>
       <!-- Begin breadcrumb -->
+<div id="page-body">
+  <div class="content">
+  {% paginate collection.products by settings.pagination_limit %}
       <div class="breadcrumb clearfix">
         <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
         <span class="arrow-space">&#62;</span>
@@ -62,28 +69,24 @@
       {% if collection.description != "" %}
         {{ collection.description }}
       {% endif %}
-      <!-- End collection description -->
-
-    </div>
-  </div>
+      <!-- End collection description -->  
   <!-- End collection info -->
+    {% if collection.products.size == 0 %}
 
-  {% if collection.products.size == 0 %}
+      {% include 'helper-default-products' %}
 
-    {% include 'helper-default-products' %}
+    {% endif %}
 
-  {% endif %}
+    <div class="product-grid">
+      {% for product in collection.products %}
+        {% include 'product-loop' with collection.handle %}
+      {% endfor %}
+    </div>
 
-  <div class="row products">
-    {% for product in collection.products %}
-      {% include 'product-loop' with collection.handle %}
-    {% endfor %}
+    {% include 'pagination' %}
+
+    {% endpaginate %}
   </div>
-
-  {% include 'pagination' %}
-
-  {% endpaginate %}
-
 </div>
 
 <script>

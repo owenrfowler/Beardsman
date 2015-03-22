@@ -16,13 +16,16 @@
 {% endunless %}{% endcomment %}
 
 <body>
-  <div id="canvas">
+  <div id="{{ pageID | handle }}" class="{% if customer %}customer-logged-in {% endif %}{{ template | replace: '.', ' ' | truncatewords: 2, '' | handle }}-page" >
 
-    {% include 'page-header' %} 
+    <div id="page">
+      {% include 'page-header' %} 
 
-    {{ content_for_layout }}
+      <div id="body">
+        {{ content_for_layout }}
+      </div>
 
-    <div id="featured-products">
+  
 {% comment %}      <div class="product">
         <img src="assets/product.jpg" alt="" />
         <p class="product-tag">
@@ -32,6 +35,5 @@
           &pound;24.99
         </p>
       </div>{% endcomment %}
-    </div>
-
-    {% include 'page-footer' %}
+  
+      {% include 'page-footer' %}

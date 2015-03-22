@@ -1,16 +1,21 @@
   .divide {
     @include gridle(12);
-    .content {
       border-top: 1px solid #e1e1df;
       line-height: 1px;  
-    }
   }
 
   footer {
-    overflow: hidden;
-    @include gridle(12);
-    @include gridle_parent();
-    padding: 46px 0;
+    clear: both;
+    .content {
+      overflow: hidden;
+    }
+    .footer-container {
+      overflow: hidden;
+      margin: 0 20px;
+      padding: 46px 0;
+      border-top: 1px solid #e3e3e3;
+      border-bottom: 1px solid #e3e3e3;
+    }
 
     h3 {
       margin: 0 0 14px;
@@ -35,11 +40,14 @@
         }
       }
     }
-    .footer-nav ul li {
-      font-size: 13px;
+    .footer-nav  {
+      @include gridle_no_gutter(left);
+      ul li {
+        font-size: 13px;
+      }
     }
     .connect {
-
+      @include gridle_no_gutter(right);
       ul li {
         overflow: hidden;
 
@@ -128,17 +136,26 @@
       }
     }
   }
-  #foot-notes {
-    @include gridle(12);
-    
+  #baseline {
+    overflow: hidden;
     display: block;
     margin: 39px 0 40px;
-    p {
-      float: left;
-      font-size: 14px;
-      line-height: 24px;
+
+    .content {
+      overflow: hidden;
     }
-    img {
-      float: right;
+    #shop-details {
+      @include gridle(6);
+      p {
+        text-align: left;
+        font-size: 14px;
+        line-height: 24px;
+      }  
+    }
+    #payment-methods {
+      @include gridle(6);
+      img {
+        float: right;
+      }
     }
   }

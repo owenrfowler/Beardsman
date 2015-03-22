@@ -22,7 +22,7 @@ $settings: (
 @include gridle_register_state(tablet-landscape, (
   min-width : 769px,
   max-width : 1024px,
-  gutter-width : 30px
+  gutter-width : 40px
 ));
 @include gridle_register_state(desktop, (
   min-width : 1025px

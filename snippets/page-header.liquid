@@ -1,35 +1,43 @@
     <header>
-      <div id="header-top"> 
-        <h1 id="logo"><a href="">{{ shop.name }}</a></h1>
-          
-        <div id="status">
-          <a id="login" href="#">My Account</a>
-          <div id="cart">
-            <a href="/cart" class="cart-link">
-              <span class="icon-cart">&#xE500;</span>
-              <span id="cart-count">
-              {% if cart.total_price == 0 %}
-                
-              {% else %}
-                {{ cart.total_price | money }}
-              {% endif %}
-              </span>
-              cart
-            </a>
+      <div class="content">
+
+        <div class="header">
+
+          <div id="header-top"> 
+            <h1 id="logo"><a href="">{{ shop.name }}</a></h1>
+            <div id="status">
+              <a id="login" href="#">My Account</a>
+              <div id="cart">
+                <a href="/cart" class="cart-link">
+                  <span class="icon-cart">&#xE500;</span>
+                  <span id="cart-count">
+                  {% if cart.total_price == 0 %}
+                    
+                  {% else %}
+                    {{ cart.total_price | money }}
+                  {% endif %}
+                  </span>
+                  cart
+                </a>
+              </div>      
+            </div><!-- #status -->
           </div>
           
-        </div><!-- #status -->
-      </div>
-      <div id="header-bottom">
-      <!-- Begin navigation -->
-        <ul id="nav">
-          {% for link in linklists.main-menu.links %}
-            <li class="{{ link.title | escape }}"><a href="{{ link.url }}" title="{{ link.title }}"{% if link.active %} class="active"{% endif %}>{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      <!-- End navigation -->
-        <div id="ship-rates">
-          <img src="{{ 'currency-flag.jpg' | asset_url }}" />
-          <p><span>&pound;4.99</span> shipping on all orders</p>
+          <div id="header-bottom">
+          <!-- Begin navigation -->
+            <ul id="nav">
+              {% for link in linklists.main-menu.links %}
+                <li class="{{ link.title | escape }}"><a href="{{ link.url }}" title="{{ link.title }}"{% if link.active %} class="active"{% endif %}>{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          <!-- End navigation -->
+            <div id="ship-rates">
+              <img src="{{ 'currency-flag.jpg' | asset_url }}" />
+              <p><span>&pound;4.99</span> shipping on all orders</p>
+            </div>
+          </div>
+        
         </div>
+
+      </div>
     </header><!-- #header -->
