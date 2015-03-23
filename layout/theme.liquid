@@ -10,30 +10,24 @@
 
 </head>
 
-{% comment %}{% assign pageID = page.handle %}
+{% assign pageID = page.handle %}
 {% unless page.handle %}
-  {% assign pageID = page_title %}
-{% endunless %}{% endcomment %}
+{% assign pageID = page_title %}
+{% endunless %}
 
-<body>
-  <div id="{{ pageID | handle }}" class="{% if customer %}customer-logged-in {% endif %}{{ template | replace: '.', ' ' | truncatewords: 2, '' | handle }}-page" >
+<body id="{{ pageID | handle }}" class="{% if customer %}customer-logged-in {% endif %}{{ template | replace: '.', ' ' | truncatewords: 2, '' | handle }}-page">
 
-    <div id="page">
-      {% include 'page-header' %} 
+  <div id="page">
+    
+    {% include 'page-header' %} 
 
-      <div id="body">
-        {{ content_for_layout }}
-      </div>
+    <div id="body">
+      {{ content_for_layout }}
+    </div>
 
-  
-{% comment %}      <div class="product">
-        <img src="assets/product.jpg" alt="" />
-        <p class="product-tag">
-          something beard oil (30ml)
-        </p>
-        <p class="list-price">
-          &pound;24.99
-        </p>
-      </div>{% endcomment %}
-  
-      {% include 'page-footer' %}
+    {% include 'page-footer' %}
+
+  </div><!-- #page -->
+
+</body>
+</html>

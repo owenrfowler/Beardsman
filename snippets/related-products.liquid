@@ -14,8 +14,8 @@
 
 {% if collection and collection.products_count > 1 %}
     
-<div class="row products">
-    <h3 class="collection-title span12 clearfix">{{ 'products.general.related_products' | t }}</h3>
+<div class="product-grid related-products">
+    <h3 class="collection-title">Other products that may interest you</h3>
 
 {% assign current_product = product %}
 {% assign current_product_found = false %}

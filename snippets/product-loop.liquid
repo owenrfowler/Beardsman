@@ -20,7 +20,7 @@
     <a href="{{ product.url }}" class="clearfix">
       <h4 class="product-title">{{ product.title }}</h4>
 
-      <p class="list-price">
+      <p class="price">
         {% if product.available %}
           {{ product.price | money }}
         {% else product.unavailable %}
