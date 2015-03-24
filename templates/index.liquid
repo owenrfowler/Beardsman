@@ -1,1 +1,38 @@
+{% comment %}Homepage Carousel {% endcomment %}
 
+<div id="page-header">
+  <div class="content">
+    {% comment %}{% include 'hero-carousel' %}{% endcomment %}
+
+    <div id="hero">
+      <div class="slide">
+
+        <div class="intro">
+          <h1>
+            organic beard oil
+          </h1>
+
+          <a class="strap">Learn more</p>
+
+          <div class="cta">
+            <a class="button" href="/collections/all">Shop</a>
+          </div>
+        </div>
+
+        <div class="image">
+          {{ 'carousel-1.png' | asset_url | img_tag }}
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="page-body">  
+  <div class="content">
+    <div id="page-content" class="rte">
+      {{ page.content }}
+    </div>
+  </div>
+</div>

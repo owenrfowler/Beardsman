@@ -11,11 +11,11 @@ $settings: (
 @include gridle_setup($settings);
 
 @include gridle_register_state(mobile, (
-  max-width : 480px,
+  max-width : 600px,
   gutter-width : 40px
 ));
 @include gridle_register_state(tablet-portrait, (
-  min-width : 481px,
+  min-width : 601px,
   max-width : 768px,
   gutter-width : 40px
 ));
