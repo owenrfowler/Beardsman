@@ -181,12 +181,12 @@ header {
   overflow: hidden;
   margin: 0 0 40px;
   
-  #carousel {
-    background-color: #2d2d2d;
+  .slide {
+    padding: 100px 0 0 40px;
 
-    #carousel-text {
+    .text {
       // padding: 100px 0 0 40px;
-      h1 {
+      h3 {
         font: normal 60px "oswaldbook";
         color: #fff;
         text-transform: uppercase;
@@ -194,9 +194,18 @@ header {
       p {
         font: 300 24px/32px "oswaldbook";
         color: #7f7f7f;
-      }  
+      }
+      .button {
+        text-align: center;
+        border: 1px solid #4f4f4e;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
     }
-    
+  }
+  .dark h3,
+  .dark p {
+    color: #2d2d2d;
   }
 }
 
