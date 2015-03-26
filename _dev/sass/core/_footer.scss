@@ -6,9 +6,6 @@
 
   footer {
     clear: both;
-    .content {
-      overflow: hidden;
-    }
     .footer-container {
       overflow: hidden;
       margin: 0 20px;
@@ -148,9 +145,6 @@
     display: block;
     margin: 39px 0 40px;
 
-    .content {
-      overflow: hidden;
-    }
     #shop-details {
       @include gridle(6);
       p {
