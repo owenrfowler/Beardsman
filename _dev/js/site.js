@@ -8,7 +8,15 @@ $(function() {
  
   $("#hero").owlCarousel({
 
-    singleItem : true
+    // navigation      : true,
+    time            : 5,
+    autoPlay        : true,
+    slideSpeed      : 500,
+    paginationSpeed : 500,
+    rewindSpeed     : 50,
+    transitionStyle : "fade",
+    singleItem      : true
+
   });
  
 });
