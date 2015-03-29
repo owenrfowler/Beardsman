@@ -4,7 +4,11 @@
 */
 
 .owl-theme .owl-controls{
-	margin-top: 10px;
+	@include gridle(12);
+	@include gridle_parent();
+	position: absolute;
+	bottom: 20px;
+	z-index: 5;
 	text-align: center;
 }
 

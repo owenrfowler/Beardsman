@@ -1,55 +1,60 @@
-{% if settings.show_carousel %}
 
-  <div id="hero" class="owl-carousel">
+<div id="hero-container">
 
-    {% if settings.show_carousel_item_1 %}
-    <div 
-      class="slide {% if settings.carousel_item_1_contrast == 'dark' %}dark{% endif %}"
-      style="background-image: url({{ 'carousel-item-1.jpg' | asset_url }})">
-      <div class="text">
-        <h3>{{ settings.carousel_item_1_title }}</h3>
-        <p>{{ settings.carousel_item_1_tag }}</p>
-        <a class="button" href="{{ settings.carousel_item_1_link }}">{{ settings.carousel_item_1_alt }}</a>
-      </div>
-    </div> 
-    {% endif %}
+  {% if settings.show_carousel %}
 
-    {% if settings.show_carousel_item_2 %}
-    <div 
-      class="slide {% if settings.carousel_item_2_contrast == 'dark' %}dark{% endif %}"
-      style="background-image: url({{ 'carousel-item-2.jpg' | asset_url }})">
-      <div class="text">
-        <h3>{{ settings.carousel_item_2_title }}</h3>
-        <p>{{ settings.carousel_item_2_tag }}</p>
-        <a class="button" href="{{ settings.carousel_item_2_link }}">{{ settings.carousel_item_2_alt }}</a>
-      </div>
-    </div> 
-    {% endif %}
+    <div id="hero" class="owl-carousel">
 
-    {% if settings.show_carousel_item_3 %}
-    <div 
-      class="slide {% if settings.carousel_item_3_contrast == 'dark' %}dark{% endif %}"
-      style="background-image: url({{ 'carousel-item-3.jpg' | asset_url }})">
-      <div class="text">
-        <h3>{{ settings.carousel_item_3_title }}</h3>
-        <p>{{ settings.carousel_item_3_tag }}</p>
-        <a class="button" href="{{ settings.carousel_item_3_link }}">{{ settings.carousel_item_3_alt }}</a>
-      </div>
-    </div> 
-    {% endif %}
+      {% if settings.show_carousel_item_1 %}
+      <div 
+        class="slide {% if settings.carousel_item_1_contrast == 'dark' %}dark{% endif %}"
+        style="background-image: url({{ 'carousel-item-1.jpg' | asset_url }})">
+        <div class="text">
+          <h3>{{ settings.carousel_item_1_title }}</h3>
+          <p>{{ settings.carousel_item_1_tag }}</p>
+          <a class="button" href="{{ settings.carousel_item_1_link }}">{{ settings.carousel_item_1_alt }}</a>
+        </div>
+      </div> 
+      {% endif %}
 
-    {% if settings.show_carousel_item_4 %}
-    <div 
-      class="slide {% if settings.carousel_item_4_contrast == 'dark' %}dark{% endif %}"
-      style="background-image: url({{ 'carousel-item-4.jpg' | asset_url }})">
-      <div class="text">
-        <h3>{{ settings.carousel_item_4_title }}</h3>
-        <p>{{ settings.carousel_item_4_tag }}</p>
-        <a class="button" href="{{ settings.carousel_item_4_link }}">{{ settings.carousel_item_4_alt }}</a>
-      </div>
-    </div> 
-    {% endif %}
-    
-  </div><!-- hero -->
+      {% if settings.show_carousel_item_2 %}
+      <div 
+        class="slide {% if settings.carousel_item_2_contrast == 'dark' %}dark{% endif %}"
+        style="background-image: url({{ 'carousel-item-2.jpg' | asset_url }})">
+        <div class="text">
+          <h3>{{ settings.carousel_item_2_title }}</h3>
+          <p>{{ settings.carousel_item_2_tag }}</p>
+          <a class="button" href="{{ settings.carousel_item_2_link }}">{{ settings.carousel_item_2_alt }}</a>
+        </div>
+      </div> 
+      {% endif %}
 
-{% endif %} 
+      {% if settings.show_carousel_item_3 %}
+      <div 
+        class="slide {% if settings.carousel_item_3_contrast == 'dark' %}dark{% endif %}"
+        style="background-image: url({{ 'carousel-item-3.jpg' | asset_url }})">
+        <div class="text">
+          <h3>{{ settings.carousel_item_3_title }}</h3>
+          <p>{{ settings.carousel_item_3_tag }}</p>
+          <a class="button" href="{{ settings.carousel_item_3_link }}">{{ settings.carousel_item_3_alt }}</a>
+        </div>
+      </div> 
+      {% endif %}
+
+      {% if settings.show_carousel_item_4 %}
+      <div 
+        class="slide {% if settings.carousel_item_4_contrast == 'dark' %}dark{% endif %}"
+        style="background-image: url({{ 'carousel-item-4.jpg' | asset_url }})">
+        <div class="text">
+          <h3>{{ settings.carousel_item_4_title }}</h3>
+          <p>{{ settings.carousel_item_4_tag }}</p>
+          <a class="button" href="{{ settings.carousel_item_4_link }}">{{ settings.carousel_item_4_alt }}</a>
+        </div>
+      </div> 
+      {% endif %}
+      
+    </div><!-- hero -->
+
+  {% endif %}
+  
+</div>
