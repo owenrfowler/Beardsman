@@ -40,6 +40,8 @@ body {
 
   @include gridle_state( mobile ) {
     padding: 0 20px;
+    min-width: 480px;
+    box-sizing: border-box;
   }
 }
 #body {

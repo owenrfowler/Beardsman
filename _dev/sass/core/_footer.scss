@@ -84,7 +84,7 @@
       }
     }
 
-    #mail-list {
+    .mail-signup {
       @include gridle(6);
       @include gridle( 12, mobile );
 
@@ -137,6 +137,30 @@
             color: #272727;
           }
         }
+      }
+      @include gridle_state( mobile ){
+        form {
+          padding-right: 140px;
+
+          input[type="submit"] {
+            right: 0px;
+          }  
+        }
+      }
+    }
+    #mail-list-mobile {
+      @include gridle_parent();
+      margin: 28px 0 0;
+    }
+
+    @include gridle_state( desktop tablet-landscape tablet-portrait ) {
+      #mail-list-mobile {
+        display: none;
+      }
+    }
+    @include gridle_state( mobile ){
+      #mail-list {
+        display: none;
       }
     }
   }
