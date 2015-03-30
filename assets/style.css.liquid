@@ -3186,7 +3186,7 @@ body {
 
 /* line 47, ../_dev/sass/style.scss */
 #body {
-  margin: 40px 0;
+  margin: 0 0 40px;
 }
 
 /* line 51, ../_dev/sass/style.scss */
@@ -3225,16 +3225,34 @@ header .header #header-top #logo {
   line-height: 41px;
   color: #272727;
 }
-/* line 78, ../_dev/sass/style.scss */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* line 72, ../_dev/sass/style.scss */
+  header .header #header-top #logo {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  /* line 72, ../_dev/sass/style.scss */
+  header .header #header-top #logo {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 72, ../_dev/sass/style.scss */
+  header .header #header-top #logo {
+    font-size: 32px;
+  }
+}
+/* line 83, ../_dev/sass/style.scss */
 header .header #header-top #logo a {
   color: inherit;
 }
-/* line 83, ../_dev/sass/style.scss */
+/* line 88, ../_dev/sass/style.scss */
 header .header #header-top #status {
   overflow: hidden;
   float: right;
 }
-/* line 86, ../_dev/sass/style.scss */
+/* line 91, ../_dev/sass/style.scss */
 header .header #header-top #status #login {
   display: inline-block;
   float: left;
@@ -3242,7 +3260,7 @@ header .header #header-top #status #login {
   color: inherit;
   font-size: 14px;
 }
-/* line 94, ../_dev/sass/style.scss */
+/* line 99, ../_dev/sass/style.scss */
 header .header #header-top #status #cart {
   overflow: hidden;
   display: inline-block;
@@ -3255,75 +3273,75 @@ header .header #header-top #status #cart {
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
 }
-/* line 103, ../_dev/sass/style.scss */
+/* line 108, ../_dev/sass/style.scss */
 header .header #header-top #status #cart .cart-link {
   text-transform: uppercase;
   font: normal 14px "oswaldbook";
   letter-spacing: 2px;
   color: #272727;
 }
-/* line 109, ../_dev/sass/style.scss */
+/* line 114, ../_dev/sass/style.scss */
 header .header #header-top #status #cart .cart-link .icon-cart {
   color: #8f8f8f;
   font-family: "SSStandard";
   font-size: 12px;
 }
-/* line 123, ../_dev/sass/style.scss */
+/* line 128, ../_dev/sass/style.scss */
 header #header-bottom {
   overflow: hidden;
   padding: 20px 0;
 }
-/* line 127, ../_dev/sass/style.scss */
+/* line 132, ../_dev/sass/style.scss */
 header #header-bottom #nav {
   overflow: hidden;
   float: left;
   list-style: none;
 }
-/* line 134, ../_dev/sass/style.scss */
+/* line 139, ../_dev/sass/style.scss */
 header #header-bottom #nav li {
   display: inline-block;
   float: left;
   margin: 0 40px 0 0;
+  font: normal 14px "oswaldbook";
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-/* line 139, ../_dev/sass/style.scss */
+/* line 148, ../_dev/sass/style.scss */
 header #header-bottom #nav li:last-child {
   margin: 0;
 }
-/* line 143, ../_dev/sass/style.scss */
+/* line 152, ../_dev/sass/style.scss */
 header #header-bottom #nav li a {
   color: #272727;
-  font: normal 14px "oswaldbook";
-  text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 2px;
-}
-/* line 149, ../_dev/sass/style.scss */
-header #header-bottom #nav li a:active {
-  color: #929292;
 }
 /* line 155, ../_dev/sass/style.scss */
+header #header-bottom #nav li a.active, header #header-bottom #nav li a:hover {
+  color: #929292;
+}
+/* line 162, ../_dev/sass/style.scss */
 header #header-bottom #ship-rates {
   overflow: hidden;
   float: right;
 }
 @media screen and (max-width: 600px) {
-  /* line 155, ../_dev/sass/style.scss */
+  /* line 162, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates {
     display: none;
   }
 }
-/* line 163, ../_dev/sass/style.scss */
+/* line 170, ../_dev/sass/style.scss */
 header #header-bottom #ship-rates img {
   display: inline-block;
   float: left;
 }
-/* line 167, ../_dev/sass/style.scss */
+/* line 174, ../_dev/sass/style.scss */
 header #header-bottom #ship-rates p {
   display: inline-block;
   margin: 4px 0 0 10px;
   font-size: 14px;
 }
-/* line 172, ../_dev/sass/style.scss */
+/* line 179, ../_dev/sass/style.scss */
 header #header-bottom #ship-rates p span {
   font-weight: 700;
 }
@@ -3814,7 +3832,7 @@ header #header-bottom #ship-rates p span {
     transform: scale(1.5);
   }
 }
-/* line 190, ../_dev/sass/style.scss */
+/* line 197, ../_dev/sass/style.scss */
 #hero-container {
   float: left;
   direction: ltr;
@@ -3823,7 +3841,7 @@ header #header-bottom #ship-rates p span {
   width: 100%;
 }
 
-/* line 196, ../_dev/sass/style.scss */
+/* line 203, ../_dev/sass/style.scss */
 #hero #progressBar {
   position: absolute;
   bottom: 0;
@@ -3831,14 +3849,14 @@ header #header-bottom #ship-rates p span {
   width: 100%;
   background: grey;
 }
-/* line 203, ../_dev/sass/style.scss */
+/* line 210, ../_dev/sass/style.scss */
 #hero #progressBar #bar {
   width: 0%;
   max-width: 100%;
   height: 2px;
-  background: blue;
+  background: red;
 }
-/* line 216, ../_dev/sass/style.scss */
+/* line 223, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
   padding: 110px 0 0 40px;
   height: 480px;
@@ -3851,50 +3869,50 @@ header #header-bottom #ship-rates p span {
   background-size: cover;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 216, ../_dev/sass/style.scss */
+  /* line 223, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
     padding-top: 95px;
     height: 420px;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 216, ../_dev/sass/style.scss */
+  /* line 223, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
     padding-top: 95px;
     height: 380px;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 216, ../_dev/sass/style.scss */
+  /* line 223, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
     padding-top: 80px;
     height: 350px;
   }
 }
-/* line 238, ../_dev/sass/style.scss */
+/* line 245, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text h3 {
   font: normal 60px "oswaldbook";
   color: #fff;
   text-transform: uppercase;
 }
 @media screen and (max-width: 600px) {
-  /* line 238, ../_dev/sass/style.scss */
+  /* line 245, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text h3 {
     font-size: 36px;
   }
 }
-/* line 247, ../_dev/sass/style.scss */
+/* line 254, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text p {
   font: 300 24px/32px "oswaldbook";
   color: #7f7f7f;
 }
 @media screen and (max-width: 600px) {
-  /* line 247, ../_dev/sass/style.scss */
+  /* line 254, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text p {
     font-size: 20px;
   }
 }
-/* line 255, ../_dev/sass/style.scss */
+/* line 262, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text .button {
   display: inline-block;
   margin: 34px 0 0;
@@ -3907,23 +3925,23 @@ header #header-bottom #ship-rates p span {
   text-transform: uppercase;
   text-decoration: none;
 }
-/* line 273, ../_dev/sass/style.scss */
+/* line 280, ../_dev/sass/style.scss */
 #hero .dark h3,
 #hero .dark p {
   color: #2d2d2d;
 }
 
-/* line 283, ../_dev/sass/style.scss */
+/* line 290, ../_dev/sass/style.scss */
 #page-header h1 {
   font: normal 32px "neuzeit_groteskregular";
   text-align: center;
 }
 
-/* line 289, ../_dev/sass/style.scss */
+/* line 296, ../_dev/sass/style.scss */
 #page-body {
   overflow: hidden;
 }
-/* line 295, ../_dev/sass/style.scss */
+/* line 302, ../_dev/sass/style.scss */
 #page-body #page-content {
   float: left;
   direction: ltr;
@@ -3932,7 +3950,7 @@ header #header-bottom #ship-rates p span {
   width: 100%;
 }
 
-/* line 302, ../_dev/sass/style.scss */
+/* line 309, ../_dev/sass/style.scss */
 .product-grid {
   float: left;
   direction: ltr;
@@ -3943,7 +3961,7 @@ header #header-bottom #ship-rates p span {
   padding-right: 0;
   overflow: hidden;
 }
-/* line 307, ../_dev/sass/style.scss */
+/* line 314, ../_dev/sass/style.scss */
 .product-grid .product {
   float: left;
   direction: ltr;
@@ -3955,49 +3973,49 @@ header #header-bottom #ship-rates p span {
   letter-spacing: 1px;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 307, ../_dev/sass/style.scss */
+  /* line 314, ../_dev/sass/style.scss */
   .product-grid .product {
     width: 50%;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 307, ../_dev/sass/style.scss */
+  /* line 314, ../_dev/sass/style.scss */
   .product-grid .product {
     width: 50%;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 307, ../_dev/sass/style.scss */
+  /* line 314, ../_dev/sass/style.scss */
   .product-grid .product {
     width: 100%;
   }
 }
-/* line 316, ../_dev/sass/style.scss */
+/* line 323, ../_dev/sass/style.scss */
 .product-grid .product img {
   width: 100%;
   height: 100%;
 }
-/* line 322, ../_dev/sass/style.scss */
+/* line 329, ../_dev/sass/style.scss */
 .product-grid .product .product-details a {
   text-decoration: none;
   color: #272727;
 }
-/* line 326, ../_dev/sass/style.scss */
+/* line 333, ../_dev/sass/style.scss */
 .product-grid .product .product-details a .product-title {
   margin: 12px 0 3px;
   font: normal 14px/24px "oswaldbook";
   text-transform: uppercase;
 }
-/* line 331, ../_dev/sass/style.scss */
+/* line 338, ../_dev/sass/style.scss */
 .product-grid .product .product-details a .price {
   font: 300 14px/24px "source_code_proregular";
 }
 
-/* line 339, ../_dev/sass/style.scss */
+/* line 346, ../_dev/sass/style.scss */
 .related-products {
   margin: 40px 0 0;
 }
-/* line 342, ../_dev/sass/style.scss */
+/* line 349, ../_dev/sass/style.scss */
 .related-products h3 {
   float: left;
   direction: ltr;
@@ -4010,7 +4028,7 @@ header #header-bottom #ship-rates p span {
   font: normal 20px "neuzeit_groteskregular";
 }
 
-/* line 355, ../_dev/sass/style.scss */
+/* line 362, ../_dev/sass/style.scss */
 #product #product-images {
   float: left;
   direction: ltr;
@@ -4018,7 +4036,7 @@ header #header-bottom #ship-rates p span {
   padding-right: 20px;
   width: 50%;
 }
-/* line 359, ../_dev/sass/style.scss */
+/* line 366, ../_dev/sass/style.scss */
 #product #product-details {
   overflow: hidden;
   float: left;
@@ -4027,7 +4045,7 @@ header #header-bottom #ship-rates p span {
   padding-right: 20px;
   width: 50%;
 }
-/* line 365, ../_dev/sass/style.scss */
+/* line 372, ../_dev/sass/style.scss */
 #product #product-details .product-description p a {
   text-decoration: underline;
 }
