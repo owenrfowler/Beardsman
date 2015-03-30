@@ -138,6 +138,25 @@
           }
         }
       }
+      @include gridle_state( tablet-landscape ){
+        form {
+          padding-right: 150px;
+
+          input[type="submit"] {
+            right: 10px;
+          }  
+        }
+      }
+      @include gridle_state( tablet-portrait ){
+        form {
+          padding-right: 80px;
+
+          input[type="submit"] {
+            right: 0px;
+            width: 70px;
+          }  
+        }
+      }
       @include gridle_state( mobile ){
         form {
           padding-right: 140px;
