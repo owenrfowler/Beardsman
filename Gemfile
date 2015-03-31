@@ -19,7 +19,7 @@ gem 'uglifier', '2.2.1'
 # SASS & Compass gems
 gem 'sass', '3.4'
 gem 'compass', '1.0.0.alpha.20'
-gem 'bootstrap-sass', '3.1.1.0'
+gem 'bootstrap-sass', '3.3.4.1'
 gem 'ceaser-easing', '0.7'
 gem 'gridle'
 

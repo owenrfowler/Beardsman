@@ -34,6 +34,9 @@
           a {
             color: #272727;
             text-decoration: none;
+            &:hover {
+              color: #929292;
+            }
           }
         }
       }
@@ -168,7 +171,7 @@
       }
     }
     #mail-list-mobile {
-      @include gridle_parent();
+      @include gridle_no_gutter(left right);
       margin: 28px 0 0;
     }
 
