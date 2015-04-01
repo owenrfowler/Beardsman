@@ -3856,7 +3856,7 @@ input[type="button"].btn-block {
   width: 50%;
 }
 
-/* line 30, ../_dev/sass/style.scss */
+/* line 32, ../_dev/sass/style.scss */
 body {
   width: 100%;
   background: #fff;
@@ -3864,7 +3864,7 @@ body {
   color: #272727;
 }
 
-/* line 39, ../_dev/sass/style.scss */
+/* line 41, ../_dev/sass/style.scss */
 #page {
   display: block;
   overflow: hidden;
@@ -3873,31 +3873,14 @@ body {
   min-width: 480px;
   box-sizing: border-box;
 }
-@media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 39, ../_dev/sass/style.scss */
-  #page {
-    padding: 0px;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 39, ../_dev/sass/style.scss */
-  #page {
-    padding: 0px;
-  }
-}
-@media screen and (min-width: 1025px) {
-  /* line 39, ../_dev/sass/style.scss */
-  #page {
-    padding: 0px;
-  }
-}
 
-/* line 51, ../_dev/sass/style.scss */
+/* line 53, ../_dev/sass/style.scss */
 #body {
   margin: 0 0 40px;
+  position: relative;
 }
 
-/* line 55, ../_dev/sass/style.scss */
+/* line 58, ../_dev/sass/style.scss */
 .content {
   display: block !important;
   float: none !important;
@@ -3908,7 +3891,16 @@ body {
   max-width: 1160px;
 }
 
-/* line 62, ../_dev/sass/style.scss */
+/* line 64, ../_dev/sass/style.scss */
+header {
+  position: relative;
+  z-index: 11;
+}
+/* line 67, ../_dev/sass/style.scss */
+header .content {
+  overflow: visible;
+}
+/* line 71, ../_dev/sass/style.scss */
 header .header {
   float: left;
   direction: ltr;
@@ -3916,44 +3908,49 @@ header .header {
   padding-right: 20px;
   width: 100%;
 }
-/* line 65, ../_dev/sass/style.scss */
+/* line 74, ../_dev/sass/style.scss */
 header .header #header-top {
-  overflow: hidden;
-  padding: 20px 0 20px;
+  padding: 20px 0;
+  height: 40px;
   border-bottom: 1px solid #e3e3e3;
+  -webkit-transition: padding 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  -o-transition: padding 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  transition: padding 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
 }
-/* line 70, ../_dev/sass/style.scss */
+/* line 83, ../_dev/sass/style.scss */
 header .header #header-top a {
   text-decoration: none;
 }
-/* line 74, ../_dev/sass/style.scss */
+/* line 87, ../_dev/sass/style.scss */
 header .header #header-top #logo {
   float: left;
   margin: 3px 0 0;
   font: normal 32px "neuzeit_groteskregular";
   color: #272727;
+  -webkit-transition: font-size 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  -o-transition: font-size 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  transition: font-size 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
 }
-/* line 80, ../_dev/sass/style.scss */
+/* line 94, ../_dev/sass/style.scss */
 header .header #header-top #logo a {
   color: inherit;
 }
 @media screen and (min-width: 1025px) {
-  /* line 65, ../_dev/sass/style.scss */
+  /* line 74, ../_dev/sass/style.scss */
   header .header #header-top {
-    padding: 30px 0 28px;
+    padding: 30px 0;
   }
-  /* line 88, ../_dev/sass/style.scss */
+  /* line 102, ../_dev/sass/style.scss */
   header .header #header-top #logo {
     margin: 2px 0 0;
-    font-size: 36px;
+    font-size: 37px;
   }
 }
-/* line 94, ../_dev/sass/style.scss */
+/* line 108, ../_dev/sass/style.scss */
 header .header #header-top #status {
-  overflow: hidden;
   float: right;
 }
-/* line 97, ../_dev/sass/style.scss */
+/* line 111, ../_dev/sass/style.scss */
 header .header #header-top #status #login {
   display: inline-block;
   float: left;
@@ -3962,13 +3959,136 @@ header .header #header-top #status #login {
   font-size: 14px;
   font-weight: 300;
 }
-/* line 106, ../_dev/sass/style.scss */
+/* line 120, ../_dev/sass/style.scss */
+header .header #header-top #status form {
+  margin: 0px;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  float: left;
+  outline: none;
+}
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  /* line 120, ../_dev/sass/style.scss */
+  header .header #header-top #status form {
+    margin: 0 0 0 20px;
+    width: 90px;
+    height: 40px;
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* line 120, ../_dev/sass/style.scss */
+  header .header #header-top #status form {
+    margin: 0 0 0 20px;
+    width: 90px;
+    height: 40px;
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1025px) {
+  /* line 120, ../_dev/sass/style.scss */
+  header .header #header-top #status form {
+    margin: 0 0 0 20px;
+    width: 90px;
+    height: 40px;
+    opacity: 1;
+  }
+}
+/* line 139, ../_dev/sass/style.scss */
+header .header #header-top #status form .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 90px;
+}
+/* line 142, ../_dev/sass/style.scss */
+header .header #header-top #status form .bootstrap-select.btn-group:not(.input-group-btn), header .header #header-top #status form .bootstrap-select.btn-group[class*="span"] {
+  margin-bottom: 0px;
+}
+/* line 145, ../_dev/sass/style.scss */
+header .header #header-top #status form .bootstrap-select .btn:focus {
+  outline: none !important;
+  border-color: #8f8f8f;
+  background-color: #e3e3e3;
+}
+/* line 150, ../_dev/sass/style.scss */
+header .header #header-top #status form .btn-default {
+  color: #272727;
+}
+/* line 152, ../_dev/sass/style.scss */
+header .header #header-top #status form .btn-default:hover {
+  background-color: transparent;
+}
+/* line 156, ../_dev/sass/style.scss */
+header .header #header-top #status form .btn {
+  padding: 10px 10px 9px 20px;
+  text-transform: uppercase;
+  font: normal 13px "oswaldbook";
+  border-color: #e3e3e3;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+}
+/* line 171, ../_dev/sass/style.scss */
+header .header #header-top #status form .btn-group.open .dropdown-toggle {
+  border-color: #8f8f8f;
+  box-shadow: none;
+}
+/* line 175, ../_dev/sass/style.scss */
+header .header #header-top #status form .open > .btn-default.dropdown-toggle {
+  background-color: #e3e3e3;
+}
+/* line 179, ../_dev/sass/style.scss */
+header .header #header-top #status form .caret {
+  top: 10px;
+  right: 28px;
+  border: 0px;
+}
+/* line 183, ../_dev/sass/style.scss */
+header .header #header-top #status form .caret::before {
+  font-family: "SSStandard";
+  font-size: 8px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  color: #8f8f8f;
+}
+/* line 202, ../_dev/sass/style.scss */
+header .header #header-top #status form .bootstrap-select .dropdown-toggle .caret:before {
+  content: 'navigatedown';
+}
+/* line 205, ../_dev/sass/style.scss */
+header .header #header-top #status form .bootstrap-select.open .dropdown-toggle .caret:before {
+  content: 'navigateup';
+}
+/* line 209, ../_dev/sass/style.scss */
+header .header #header-top #status form .dropdown-menu {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+/* line 214, ../_dev/sass/style.scss */
 header .header #header-top #status #cart {
   overflow: hidden;
   display: inline-block;
   float: left;
   margin: 0 0 0 20px;
-  padding: 9px 18px 8px 20px;
+  padding: 10px 18px 9px 20px;
   border: 1px solid #e1e1df;
   box-sizing: border-box;
   border-radius: 3px;
@@ -3976,36 +4096,37 @@ header .header #header-top #status #cart {
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
 }
-/* line 116, ../_dev/sass/style.scss */
+/* line 224, ../_dev/sass/style.scss */
 header .header #header-top #status #cart .cart-link {
   text-transform: uppercase;
-  font: normal 14px "oswaldbook";
+  font: normal 13px "oswaldbook";
   letter-spacing: 2px;
   color: #272727;
 }
-/* line 122, ../_dev/sass/style.scss */
+/* line 230, ../_dev/sass/style.scss */
 header .header #header-top #status #cart .cart-link .icon-cart {
   color: #8f8f8f;
   font-family: "SSStandard";
   font-size: 12px;
 }
-/* line 136, ../_dev/sass/style.scss */
+/* line 244, ../_dev/sass/style.scss */
 header #header-bottom {
   display: none;
 }
 @media screen and (min-width: 1025px) {
-  /* line 136, ../_dev/sass/style.scss */
+  /* line 244, ../_dev/sass/style.scss */
   header #header-bottom {
+    display: block;
     overflow: hidden;
     padding: 20px 0;
   }
-  /* line 143, ../_dev/sass/style.scss */
+  /* line 252, ../_dev/sass/style.scss */
   header #header-bottom #nav {
     overflow: hidden;
     float: left;
     list-style: none;
   }
-  /* line 150, ../_dev/sass/style.scss */
+  /* line 259, ../_dev/sass/style.scss */
   header #header-bottom #nav li {
     display: inline-block;
     float: left;
@@ -4014,53 +4135,54 @@ header #header-bottom {
     text-transform: uppercase;
     letter-spacing: 1.5px;
   }
-  /* line 159, ../_dev/sass/style.scss */
+  /* line 268, ../_dev/sass/style.scss */
   header #header-bottom #nav li:last-child {
     margin: 0;
   }
-  /* line 163, ../_dev/sass/style.scss */
+  /* line 272, ../_dev/sass/style.scss */
   header #header-bottom #nav li a {
     color: #272727;
     text-decoration: none;
   }
-  /* line 166, ../_dev/sass/style.scss */
+  /* line 275, ../_dev/sass/style.scss */
   header #header-bottom #nav li a.active, header #header-bottom #nav li a:hover {
     color: #929292;
   }
-  /* line 173, ../_dev/sass/style.scss */
+  /* line 282, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates {
     overflow: hidden;
     float: right;
   }
-  /* line 177, ../_dev/sass/style.scss */
+  /* line 286, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates img {
     display: inline-block;
     float: left;
   }
-  /* line 181, ../_dev/sass/style.scss */
+  /* line 290, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates p {
     display: inline-block;
     margin: 4px 0 0 10px;
     font-size: 14px;
   }
-  /* line 186, ../_dev/sass/style.scss */
+  /* line 295, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates p span {
     font-weight: 700;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 136, ../_dev/sass/style.scss */
+  /* line 244, ../_dev/sass/style.scss */
   header #header-bottom {
+    display: block;
     overflow: hidden;
     padding: 20px 0;
   }
-  /* line 143, ../_dev/sass/style.scss */
+  /* line 252, ../_dev/sass/style.scss */
   header #header-bottom #nav {
     overflow: hidden;
     float: left;
     list-style: none;
   }
-  /* line 150, ../_dev/sass/style.scss */
+  /* line 259, ../_dev/sass/style.scss */
   header #header-bottom #nav li {
     display: inline-block;
     float: left;
@@ -4069,53 +4191,54 @@ header #header-bottom {
     text-transform: uppercase;
     letter-spacing: 1.5px;
   }
-  /* line 159, ../_dev/sass/style.scss */
+  /* line 268, ../_dev/sass/style.scss */
   header #header-bottom #nav li:last-child {
     margin: 0;
   }
-  /* line 163, ../_dev/sass/style.scss */
+  /* line 272, ../_dev/sass/style.scss */
   header #header-bottom #nav li a {
     color: #272727;
     text-decoration: none;
   }
-  /* line 166, ../_dev/sass/style.scss */
+  /* line 275, ../_dev/sass/style.scss */
   header #header-bottom #nav li a.active, header #header-bottom #nav li a:hover {
     color: #929292;
   }
-  /* line 173, ../_dev/sass/style.scss */
+  /* line 282, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates {
     overflow: hidden;
     float: right;
   }
-  /* line 177, ../_dev/sass/style.scss */
+  /* line 286, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates img {
     display: inline-block;
     float: left;
   }
-  /* line 181, ../_dev/sass/style.scss */
+  /* line 290, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates p {
     display: inline-block;
     margin: 4px 0 0 10px;
     font-size: 14px;
   }
-  /* line 186, ../_dev/sass/style.scss */
+  /* line 295, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates p span {
     font-weight: 700;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 136, ../_dev/sass/style.scss */
+  /* line 244, ../_dev/sass/style.scss */
   header #header-bottom {
+    display: block;
     overflow: hidden;
     padding: 20px 0;
   }
-  /* line 143, ../_dev/sass/style.scss */
+  /* line 252, ../_dev/sass/style.scss */
   header #header-bottom #nav {
     overflow: hidden;
     float: left;
     list-style: none;
   }
-  /* line 150, ../_dev/sass/style.scss */
+  /* line 259, ../_dev/sass/style.scss */
   header #header-bottom #nav li {
     display: inline-block;
     float: left;
@@ -4124,54 +4247,54 @@ header #header-bottom {
     text-transform: uppercase;
     letter-spacing: 1.5px;
   }
-  /* line 159, ../_dev/sass/style.scss */
+  /* line 268, ../_dev/sass/style.scss */
   header #header-bottom #nav li:last-child {
     margin: 0;
   }
-  /* line 163, ../_dev/sass/style.scss */
+  /* line 272, ../_dev/sass/style.scss */
   header #header-bottom #nav li a {
     color: #272727;
     text-decoration: none;
   }
-  /* line 166, ../_dev/sass/style.scss */
+  /* line 275, ../_dev/sass/style.scss */
   header #header-bottom #nav li a.active, header #header-bottom #nav li a:hover {
     color: #929292;
   }
-  /* line 173, ../_dev/sass/style.scss */
+  /* line 282, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates {
     overflow: hidden;
     float: right;
   }
-  /* line 177, ../_dev/sass/style.scss */
+  /* line 286, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates img {
     display: inline-block;
     float: left;
   }
-  /* line 181, ../_dev/sass/style.scss */
+  /* line 290, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates p {
     display: inline-block;
     margin: 4px 0 0 10px;
     font-size: 14px;
   }
-  /* line 186, ../_dev/sass/style.scss */
+  /* line 295, ../_dev/sass/style.scss */
   header #header-bottom #ship-rates p span {
     font-weight: 700;
   }
 }
 @media screen and (min-width: 1025px) {
-  /* line 193, ../_dev/sass/style.scss */
+  /* line 302, ../_dev/sass/style.scss */
   header #header-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 193, ../_dev/sass/style.scss */
+  /* line 302, ../_dev/sass/style.scss */
   header #header-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 193, ../_dev/sass/style.scss */
+  /* line 302, ../_dev/sass/style.scss */
   header #header-mobile {
     display: none;
   }
@@ -4663,7 +4786,7 @@ header #header-bottom {
     transform: scale(1.5);
   }
 }
-/* line 210, ../_dev/sass/style.scss */
+/* line 320, ../_dev/sass/style.scss */
 #hero-container {
   float: left;
   direction: ltr;
@@ -4672,7 +4795,7 @@ header #header-bottom {
   width: 100%;
 }
 
-/* line 216, ../_dev/sass/style.scss */
+/* line 326, ../_dev/sass/style.scss */
 #hero #progressBar {
   position: absolute;
   bottom: 0;
@@ -4680,14 +4803,14 @@ header #header-bottom {
   width: 100%;
   background: grey;
 }
-/* line 223, ../_dev/sass/style.scss */
+/* line 333, ../_dev/sass/style.scss */
 #hero #progressBar #bar {
   width: 0%;
   max-width: 100%;
   height: 2px;
   background: red;
 }
-/* line 236, ../_dev/sass/style.scss */
+/* line 346, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
   padding: 110px 0 0 40px;
   height: 480px;
@@ -4698,29 +4821,32 @@ header #header-bottom {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
+  -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 236, ../_dev/sass/style.scss */
+  /* line 346, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
     padding-top: 95px;
     height: 420px;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 236, ../_dev/sass/style.scss */
+  /* line 346, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
     padding-top: 95px;
     height: 380px;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 236, ../_dev/sass/style.scss */
+  /* line 346, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide {
     padding-top: 80px;
     height: 350px;
   }
 }
-/* line 258, ../_dev/sass/style.scss */
+/* line 369, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text h3 {
   width: 320px;
   font: normal 60px/72px "oswaldbook";
@@ -4729,25 +4855,25 @@ header #header-bottom {
   letter-spacing: 4px;
 }
 @media screen and (max-width: 600px) {
-  /* line 258, ../_dev/sass/style.scss */
+  /* line 369, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text h3 {
     width: 250px;
     font-size: 36px;
     line-height: 43px;
   }
 }
-/* line 271, ../_dev/sass/style.scss */
+/* line 382, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text p {
   font: 300 24px/32px "oswaldbook";
   color: #7f7f7f;
 }
 @media screen and (max-width: 600px) {
-  /* line 271, ../_dev/sass/style.scss */
+  /* line 382, ../_dev/sass/style.scss */
   #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text p {
     font-size: 20px;
   }
 }
-/* line 279, ../_dev/sass/style.scss */
+/* line 390, ../_dev/sass/style.scss */
 #hero .owl-wrapper-outer .owl-wrapper .owl-item .slide .text .button {
   display: inline-block;
   margin: 34px 0 0;
@@ -4760,23 +4886,28 @@ header #header-bottom {
   text-transform: uppercase;
   text-decoration: none;
 }
-/* line 297, ../_dev/sass/style.scss */
+/* line 408, ../_dev/sass/style.scss */
 #hero .dark h3,
 #hero .dark p {
   color: #2d2d2d;
 }
 
-/* line 307, ../_dev/sass/style.scss */
+/* line 417, ../_dev/sass/style.scss */
+#page-header {
+  position: relative;
+  z-index: 10;
+}
+/* line 420, ../_dev/sass/style.scss */
 #page-header h1 {
   font: normal 32px "neuzeit_groteskregular";
   text-align: center;
 }
 
-/* line 313, ../_dev/sass/style.scss */
+/* line 426, ../_dev/sass/style.scss */
 #page-body {
   overflow: hidden;
 }
-/* line 319, ../_dev/sass/style.scss */
+/* line 432, ../_dev/sass/style.scss */
 #page-body #page-content {
   float: left;
   direction: ltr;
@@ -4785,7 +4916,7 @@ header #header-bottom {
   width: 100%;
 }
 
-/* line 326, ../_dev/sass/style.scss */
+/* line 439, ../_dev/sass/style.scss */
 .product-grid {
   float: left;
   direction: ltr;
@@ -4796,7 +4927,7 @@ header #header-bottom {
   padding-right: 0;
   overflow: hidden;
 }
-/* line 331, ../_dev/sass/style.scss */
+/* line 444, ../_dev/sass/style.scss */
 .product-grid .product {
   float: left;
   direction: ltr;
@@ -4808,49 +4939,49 @@ header #header-bottom {
   letter-spacing: 1px;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 331, ../_dev/sass/style.scss */
+  /* line 444, ../_dev/sass/style.scss */
   .product-grid .product {
     width: 50%;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 331, ../_dev/sass/style.scss */
+  /* line 444, ../_dev/sass/style.scss */
   .product-grid .product {
     width: 50%;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 331, ../_dev/sass/style.scss */
+  /* line 444, ../_dev/sass/style.scss */
   .product-grid .product {
     width: 100%;
   }
 }
-/* line 340, ../_dev/sass/style.scss */
+/* line 453, ../_dev/sass/style.scss */
 .product-grid .product img {
   width: 100%;
   height: 100%;
 }
-/* line 346, ../_dev/sass/style.scss */
+/* line 459, ../_dev/sass/style.scss */
 .product-grid .product .product-details a {
   text-decoration: none;
   color: #272727;
 }
-/* line 350, ../_dev/sass/style.scss */
+/* line 463, ../_dev/sass/style.scss */
 .product-grid .product .product-details a .product-title {
   margin: 12px 0 3px;
   font: normal 14px/24px "oswaldbook";
   text-transform: uppercase;
 }
-/* line 355, ../_dev/sass/style.scss */
+/* line 468, ../_dev/sass/style.scss */
 .product-grid .product .product-details a .price {
   font: 300 14px/24px "source_code_proregular";
 }
 
-/* line 363, ../_dev/sass/style.scss */
+/* line 476, ../_dev/sass/style.scss */
 .related-products {
   margin: 40px 0 0;
 }
-/* line 366, ../_dev/sass/style.scss */
+/* line 479, ../_dev/sass/style.scss */
 .related-products h3 {
   float: left;
   direction: ltr;
@@ -4863,7 +4994,7 @@ header #header-bottom {
   font: normal 20px "neuzeit_groteskregular";
 }
 
-/* line 379, ../_dev/sass/style.scss */
+/* line 492, ../_dev/sass/style.scss */
 #product #product-images {
   float: left;
   direction: ltr;
@@ -4871,7 +5002,7 @@ header #header-bottom {
   padding-right: 20px;
   width: 50%;
 }
-/* line 383, ../_dev/sass/style.scss */
+/* line 496, ../_dev/sass/style.scss */
 #product #product-details {
   overflow: hidden;
   float: left;
@@ -4880,12 +5011,12 @@ header #header-bottom {
   padding-right: 20px;
   width: 50%;
 }
-/* line 389, ../_dev/sass/style.scss */
+/* line 502, ../_dev/sass/style.scss */
 #product #product-details .product-description p a {
   text-decoration: underline;
 }
 
-/* line 1, ../_dev/sass/core/_footer.scss */
+/* line 512, ../_dev/sass/style.scss */
 .divide {
   float: left;
   direction: ltr;
@@ -4896,11 +5027,11 @@ header #header-bottom {
   line-height: 1px;
 }
 
-/* line 7, ../_dev/sass/core/_footer.scss */
+/* line 518, ../_dev/sass/style.scss */
 footer {
   clear: both;
 }
-/* line 9, ../_dev/sass/core/_footer.scss */
+/* line 520, ../_dev/sass/style.scss */
 footer .footer-container {
   overflow: hidden;
   margin: 0 20px;
@@ -4908,14 +5039,14 @@ footer .footer-container {
   border-top: 1px solid #e3e3e3;
   border-bottom: 1px solid #e3e3e3;
 }
-/* line 17, ../_dev/sass/core/_footer.scss */
+/* line 528, ../_dev/sass/style.scss */
 footer h3 {
   margin: 0 0 14px;
   font: normal 14px 'oswaldbook';
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 23, ../_dev/sass/core/_footer.scss */
+/* line 534, ../_dev/sass/style.scss */
 footer .footer-nav,
 footer .connect {
   float: left;
@@ -4925,51 +5056,51 @@ footer .connect {
   width: 25%;
 }
 @media screen and (max-width: 600px) {
-  /* line 23, ../_dev/sass/core/_footer.scss */
+  /* line 534, ../_dev/sass/style.scss */
   footer .footer-nav,
   footer .connect {
     width: 50%;
   }
 }
-/* line 28, ../_dev/sass/core/_footer.scss */
+/* line 539, ../_dev/sass/style.scss */
 footer .footer-nav ul,
 footer .connect ul {
   margin: -1px 0 0;
 }
-/* line 30, ../_dev/sass/core/_footer.scss */
+/* line 541, ../_dev/sass/style.scss */
 footer .footer-nav ul li,
 footer .connect ul li {
   font-size: 14px;
   line-height: 24px;
 }
-/* line 34, ../_dev/sass/core/_footer.scss */
+/* line 545, ../_dev/sass/style.scss */
 footer .footer-nav ul li a,
 footer .connect ul li a {
   color: #272727;
   text-decoration: none;
 }
-/* line 37, ../_dev/sass/core/_footer.scss */
+/* line 548, ../_dev/sass/style.scss */
 footer .footer-nav ul li a:hover,
 footer .connect ul li a:hover {
   color: #929292;
 }
-/* line 44, ../_dev/sass/core/_footer.scss */
+/* line 555, ../_dev/sass/style.scss */
 footer .footer-nav {
   padding-left: 0;
 }
-/* line 46, ../_dev/sass/core/_footer.scss */
+/* line 557, ../_dev/sass/style.scss */
 footer .footer-nav ul li {
   font-size: 13px;
 }
-/* line 50, ../_dev/sass/core/_footer.scss */
+/* line 561, ../_dev/sass/style.scss */
 footer .connect {
   padding-right: 0;
 }
-/* line 52, ../_dev/sass/core/_footer.scss */
+/* line 563, ../_dev/sass/style.scss */
 footer .connect ul li {
   overflow: hidden;
 }
-/* line 55, ../_dev/sass/core/_footer.scss */
+/* line 566, ../_dev/sass/style.scss */
 footer .connect ul li:before {
   float: left;
   padding: 1px 10px 0 0;
@@ -4989,23 +5120,23 @@ footer .connect ul li:before {
   font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
-/* line 74, ../_dev/sass/core/_footer.scss */
+/* line 585, ../_dev/sass/style.scss */
 footer .connect ul li:before a {
   float: left;
 }
-/* line 78, ../_dev/sass/core/_footer.scss */
+/* line 589, ../_dev/sass/style.scss */
 footer .connect ul li.facebook:before {
   content: 'facebook';
 }
-/* line 81, ../_dev/sass/core/_footer.scss */
+/* line 592, ../_dev/sass/style.scss */
 footer .connect ul li.pinterest:before {
   content: 'pinterest';
 }
-/* line 84, ../_dev/sass/core/_footer.scss */
+/* line 595, ../_dev/sass/style.scss */
 footer .connect ul li.twitter:before {
   content: 'twitter';
 }
-/* line 90, ../_dev/sass/core/_footer.scss */
+/* line 601, ../_dev/sass/style.scss */
 footer .mail-signup {
   float: left;
   direction: ltr;
@@ -5014,24 +5145,24 @@ footer .mail-signup {
   width: 50%;
 }
 @media screen and (max-width: 600px) {
-  /* line 90, ../_dev/sass/core/_footer.scss */
+  /* line 601, ../_dev/sass/style.scss */
   footer .mail-signup {
     width: 100%;
   }
 }
-/* line 94, ../_dev/sass/core/_footer.scss */
+/* line 605, ../_dev/sass/style.scss */
 footer .mail-signup p {
   font-size: 13px;
   line-height: 22px;
 }
-/* line 98, ../_dev/sass/core/_footer.scss */
+/* line 609, ../_dev/sass/style.scss */
 footer .mail-signup form {
   overflow: hidden;
   position: relative;
   margin: 18px 0 0;
   padding-right: 235px;
 }
-/* line 104, ../_dev/sass/core/_footer.scss */
+/* line 615, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="text"] {
   float: left;
   padding: 0 0 0 10px;
@@ -5039,15 +5170,18 @@ footer .mail-signup form input[type="text"] {
   height: 40px;
   border: 1px solid #e1e1df;
   border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
   font: 14px/24px 'source_code_proregular';
   outline: none;
   box-sizing: border-box;
 }
-/* line 114, ../_dev/sass/core/_footer.scss */
+/* line 625, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="text"]:focus {
   border: 1px solid #272727;
 }
-/* line 118, ../_dev/sass/core/_footer.scss */
+/* line 629, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="submit"] {
   position: absolute;
   top: 0;
@@ -5063,84 +5197,84 @@ footer .mail-signup form input[type="submit"] {
   text-transform: uppercase;
   cursor: pointer;
   box-sizing: border-box;
-  -moz-transition: all 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
-  -webkit-transition: all 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
-  transition: all 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+  transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
 }
-/* line 137, ../_dev/sass/core/_footer.scss */
+/* line 649, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="submit"]:hover {
   background-color: #fff;
   color: #272727;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 145, ../_dev/sass/core/_footer.scss */
+  /* line 657, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 150px;
   }
-  /* line 148, ../_dev/sass/core/_footer.scss */
+  /* line 660, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 10px;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 154, ../_dev/sass/core/_footer.scss */
+  /* line 666, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 80px;
   }
-  /* line 157, ../_dev/sass/core/_footer.scss */
+  /* line 669, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 0px;
     width: 70px;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 164, ../_dev/sass/core/_footer.scss */
+  /* line 676, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 140px;
   }
-  /* line 167, ../_dev/sass/core/_footer.scss */
+  /* line 679, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 0px;
   }
 }
-/* line 173, ../_dev/sass/core/_footer.scss */
+/* line 685, ../_dev/sass/style.scss */
 footer #mail-list-mobile {
   padding-left: 0;
   padding-right: 0;
   margin: 28px 0 0;
 }
 @media screen and (min-width: 1025px) {
-  /* line 179, ../_dev/sass/core/_footer.scss */
+  /* line 691, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 179, ../_dev/sass/core/_footer.scss */
+  /* line 691, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 179, ../_dev/sass/core/_footer.scss */
+  /* line 691, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 184, ../_dev/sass/core/_footer.scss */
+  /* line 696, ../_dev/sass/style.scss */
   footer #mail-list {
     display: none;
   }
 }
 
-/* line 189, ../_dev/sass/core/_footer.scss */
+/* line 701, ../_dev/sass/style.scss */
 #baseline {
   overflow: hidden;
   display: block;
   margin: 39px 0 40px;
 }
-/* line 194, ../_dev/sass/core/_footer.scss */
+/* line 706, ../_dev/sass/style.scss */
 #baseline #shop-details {
   float: left;
   direction: ltr;
@@ -5148,13 +5282,13 @@ footer #mail-list-mobile {
   padding-right: 20px;
   width: 50%;
 }
-/* line 196, ../_dev/sass/core/_footer.scss */
+/* line 708, ../_dev/sass/style.scss */
 #baseline #shop-details p {
   text-align: left;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 202, ../_dev/sass/core/_footer.scss */
+/* line 714, ../_dev/sass/style.scss */
 #baseline #payment-methods {
   float: left;
   direction: ltr;
@@ -5162,7 +5296,7 @@ footer #mail-list-mobile {
   padding-right: 20px;
   width: 50%;
 }
-/* line 204, ../_dev/sass/core/_footer.scss */
+/* line 716, ../_dev/sass/style.scss */
 #baseline #payment-methods img {
   float: right;
 }

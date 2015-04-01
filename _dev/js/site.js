@@ -1,14 +1,16 @@
 /* includes */
 // =require jquery
+// =require bootstrap.custom
+// =require bootstrap.select
 // =require jquery.owl.carousel
 
 // site controls
 
 $(function() {
 
-  var time = 10; // time in seconds
-
-  var $progressBar,
+var homePageCarousel = function( ){
+  var time = 10, // time in seconds
+   $progressBar,
       $bar, 
       $elem, 
       isPause, 
@@ -86,6 +88,7 @@ $(function() {
       start();
     }
 
+  }();
     //uncomment this to make pause on mouseover 
     // $elem.on('mouseover',function(){
     //   isPause = true;
@@ -93,4 +96,16 @@ $(function() {
     // $elem.on('mouseout',function(){
     //   isPause = false;
     // })
+
+  /************************************************************
+  *
+  * Forms
+  *
+  */
+
+  // Form selects
+
+  $('.selectBox select').selectpicker();
+  
+
 });
