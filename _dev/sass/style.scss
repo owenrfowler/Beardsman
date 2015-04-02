@@ -175,6 +175,10 @@ header {
             .open > .btn-default.dropdown-toggle {
               background-color: #e3e3e3;
             }
+
+            .bootstrap-select.btn-group .dropdown-menu li > a span {
+              text-transform: uppercase;
+            }
             
             .caret {
               top: 10px;
@@ -353,11 +357,11 @@ header {
           @include ceaser-transition(all, 500ms, $ease);
                     
           @include gridle_state (tablet-landscape){
-            padding-top: 95px;
+            padding-top: 90px;
             height: 420px;
           }
           @include gridle_state (tablet-portrait){
-            padding-top: 95px;
+            padding-top: 70px;
             height: 380px;
           }
           @include gridle_state (mobile){
@@ -367,24 +371,24 @@ header {
 
           .text {
             h3 {
-              width: 320px;
-              font: normal 60px/72px "oswaldbook";
+              width: 250px;
+              font: normal 36px/43px "oswaldbook";
               color: #fff;
               text-transform: uppercase;
               letter-spacing: 4px;
 
-              @include gridle_state (mobile){
-                width: 250px;
-                font-size: 36px;
-                line-height: 43px;
+              @include gridle_state (tablet-portrait tablet-landscape desktop){
+                width: 320px;
+                font-size: 60px;
+                line-height: 72px;
               }
             }
             p {
-              font: 300 24px/32px "oswaldbook";
+              font: 300 20px/32px "oswaldbook";
               color: #7f7f7f;
 
-              @include gridle_state (mobile){
-                font-size: 20px;
+              @include gridle_state (tablet-portrait tablet-landscape desktop){
+                font-size: 24px;
               }
             }
             .button {
@@ -398,6 +402,12 @@ header {
               letter-spacing: 2px;              
               text-transform: uppercase;
               text-decoration: none;
+              @include ceaser-transition(all, 500ms, $ease);
+
+              &:hover {
+                background: #fff;
+                color: #4f4f4e;
+              }
             }
           }
         }
