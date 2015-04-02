@@ -9,10 +9,9 @@
   </div>
 </div>
 
-<div id="page-body">  
-  <div class="content">
-    <div id="page-content" class="rte">
-      {{ page.content }}
-    </div>
-  </div>
-</div>
+{% comment %}
+  Featured Products
+{% endcomment %}
+{% assign chosenCollection = collections.['featured-products'] %}
+{% assign listingTitle = 'Featured Products'%}
+{% include 'featured-products' %}

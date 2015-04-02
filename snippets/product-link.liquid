@@ -8,30 +8,30 @@
   {% if collections[collection_handle].products.size == 5 %}{% assign product_span_size = 'span3' %}{% endif %}
 {% endif %}{% endcomment %}
 
-<div class="product {{ product_span_size }}">
+  <div class="product {{ product_span_size }}">
 
-  <div class="image">
-    <a href="{{ product.url }}">          
-      <img src="{% if product.images.size >= 1%}{{ product.featured_image | product_img_url: 'large' }}{% else %}{{ 'No_Image_2.png' | asset_url }}{% endif %}" alt="{{ product.title | escape  }}" />
-    </a>
+    <div class="image">
+      <a href="{{ product.url }}">          
+        <img src="{% if product.images.size >= 1%}{{ product.featured_image | product_img_url: 'large' }}{% else %}{{ 'No_Image_2.png' | asset_url }}{% endif %}" alt="{{ product.title | escape  }}" />
+      </a>
+    </div>
+
+    <div class="product-details">
+      <a href="{{ product.url }}" class="clearfix">
+        <h4 class="product-title">{{ product.title }}</h4>
+        <p class="price">
+          {% if product.available %}
+            {{ product.price | money }}
+          {% else product.unavailable %}
+            {{ 'Sold Out' }}
+            {% comment %}{{ product.price | money }} {{ 'products.product.sold_out_html' | t }}{% endcomment %}
+          {% endif %}
+        </p>
+        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+      </a>
+    </div>
   </div>
 
-  <div class="product-details">
-    <a href="{{ product.url }}" class="clearfix">
-      <h4 class="product-title">{{ product.title }}</h4>
-
-      <p class="price">
-        {% if product.available %}
-          {{ product.price | money }}
-        {% else product.unavailable %}
-          {{ 'Sold Out' }}
-          {% comment %}{{ product.price | money }} {{ 'products.product.sold_out_html' | t }}{% endcomment %}
-        {% endif %}
-      </p>
-      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
-    </a>
-  </div>
-</div>
 
 {% comment %}{% if product_span_size == 'span4' %}{% cycle 'clear-product-loop': '', '', '<div style="clear:both;"></div>' %}{% endif %}
 {% if product_span_size == 'span3' %}{% cycle 'clear-product-loop': '', '', '', '<div style="clear:both;"></div>' %}{% endif %}{% endcomment %}

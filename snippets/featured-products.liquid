@@ -1,0 +1,40 @@
+{% assign currentProductFound = false %}
+{% unless chosenCollection.empty? %}
+{% if chosenCollection and chosenCollection.products_count > 1 %}
+  <div id="featured-products">
+    <div class="content"> 
+       <div class="header">
+        {% comment %}<a class="prev navigate" href="#">navigateleft</a>{% endcomment %}
+        <h2>{{ listingTitle }}</h2>
+        {% comment %}<a class="next navigate" href="#">navigateright</a>{% endcomment %}
+      </div>
+ {% comment %}     <div class="viewport">{% endcomment %}
+
+          {% comment %}Is this product on sale?{% endcomment %}
+        {% comment %}JEFF: no this would be wrong here I think unless they use a sales app{% endcomment %}
+
+          {% comment %}          
+          {% assign on_sale = false %}
+          {% if product.compare_at_price > product.price %}
+            {% assign on_sale = true %}
+          {% endif %}
+          {% endcomment %}
+      <div class="product-grid">
+        {% for product in chosenCollection.products %}
+          
+            {% if currentProduct %}
+              {% unless product.handle == currentProduct.handle %}
+                {% include 'product-link' %}
+              {% endunless %}
+              {% else %}
+                {% include 'product-link' %}
+            {% endif %}
+
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </div>
+{% endif %}
+{% endunless %} 

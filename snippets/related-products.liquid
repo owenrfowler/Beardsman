@@ -24,7 +24,7 @@
     {% assign current_product_found = true %}
   {% else %}
     {% unless current_product_found == false and forloop.last %}
-      {% include 'product-loop' with collection.handle %}
+      {% include 'product-link' with collection.handle %}
     {% endunless %}
   {% endif %}
 {% endfor %}

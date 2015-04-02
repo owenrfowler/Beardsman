@@ -53,6 +53,7 @@ body {
 #body {
   margin: 0 0 40px;
   position: relative;
+  clear: both;
 }
 
 .content {
@@ -446,16 +447,27 @@ header {
 
 // PRODUCTS & COLLECTIONS
 
+
+#featured-products {
+  .header {
+    @include gridle(12);
+    padding: 72px 0 31px;
+    text-align: center;
+    h2 {
+      font: normal 32px "neuzeit_groteskregular";
+    }
+  }
+}
 .product-grid {
   @include gridle(12);
   @include gridle_parent();
   overflow: hidden;
 
   .product {
-    @include gridle(3);
+    @include gridle(12);
     @include gridle( 6, tablet-landscape );
     @include gridle( 6, tablet-portrait );
-    @include gridle( 12, mobile );
+    @include gridle( 3, desktop );
     display: block;
     margin: 0 0 46px;
     letter-spacing: 1px;
@@ -482,6 +494,7 @@ header {
     }
   }
 }
+
  // related = grid layout 
 .related-products {
   margin: 40px 0 0;
@@ -519,11 +532,7 @@ header {
 }
 
 // footer
-  .divide {
-    @include gridle(12);
-      border-top: 1px solid #e1e1df;
-      line-height: 1px;  
-  }
+
 
   footer {
     clear: both;
