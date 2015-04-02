@@ -87,12 +87,9 @@
     <!-- Begin description -->
       <div id="product-details">
         
-        {% comment %}<h1 class="title">{{ product.title }}</h1>{% endcomment %}
         {% assign variant = product.selected_or_first_available_variant %}
-        <div class="purchase">
-          <h2 class="price" id="price-preview">{{ variant.price | money }}{% if variant.price < variant.compare_at_price %} <del>{{ variant.compare_at_price | money }}</del>{% endif %}</h2>
-        </div>
-        
+          <h4 class="price" id="price-preview">{{ variant.price | money }}{% if variant.price < variant.compare_at_price %} <del>{{ variant.compare_at_price | money }}</del>{% endif %}</h2>
+               
         {% assign hide_default_title = false %}
         {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
           {% assign hide_default_title = true %}
