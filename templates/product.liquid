@@ -2,7 +2,7 @@
   == Vendor ==
 {% endcomment %}
 {% assign showVendor = false %}
-{% if collection.all_types contains 'Beard Oil' %}
+{% if collection.title == beard-oils %}
   {% assign showVendor = true %}
 {% endif %}
 
@@ -59,7 +59,7 @@
 
     
     <!-- Begin description -->
-      <div id="product-details">
+      <div class="text">
         
         {% assign variant = product.selected_or_first_available_variant %}
     

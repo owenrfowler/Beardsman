@@ -104,8 +104,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 90, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/gridle-1.3.36/stylesheets/gridle/_silent-classes.scss */
-.grid-0, .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12, .grid-mobile-0, .grid-mobile-1, .grid-mobile-2, .grid-mobile-3, .grid-mobile-4, .grid-mobile-5, .grid-mobile-6, .grid-mobile-7, .grid-mobile-8, .grid-mobile-9, .grid-mobile-10, .grid-mobile-11, .grid-mobile-12, .grid-tablet-portrait-0, .grid-tablet-portrait-1, .grid-tablet-portrait-2, .grid-tablet-portrait-3, .grid-tablet-portrait-4, .grid-tablet-portrait-5, .grid-tablet-portrait-6, .grid-tablet-portrait-7, .grid-tablet-portrait-8, .grid-tablet-portrait-9, .grid-tablet-portrait-10, .grid-tablet-portrait-11, .grid-tablet-portrait-12, .grid-tablet-landscape-0, .grid-tablet-landscape-1, .grid-tablet-landscape-2, .grid-tablet-landscape-3, .grid-tablet-landscape-4, .grid-tablet-landscape-5, .grid-tablet-landscape-6, .grid-tablet-landscape-7, .grid-tablet-landscape-8, .grid-tablet-landscape-9, .grid-tablet-landscape-10, .grid-tablet-landscape-11, .grid-tablet-landscape-12, .grid-desktop-0, .grid-desktop-1, .grid-desktop-2, .grid-desktop-3, .grid-desktop-4, .grid-desktop-5, .grid-desktop-6, .grid-desktop-7, .grid-desktop-8, .grid-desktop-9, .grid-desktop-10, .grid-desktop-11, .grid-desktop-12, header .header, .owl-theme .owl-controls, #hero-container, #page-body #page-content, #featured-products .header, .product-grid, .product-grid .product, .related-products.product-grid .product, .related-products.product-grid h3, #product #product-images,
-#product #product-details, footer .footer-nav,
+.grid-0, .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12, .grid-mobile-0, .grid-mobile-1, .grid-mobile-2, .grid-mobile-3, .grid-mobile-4, .grid-mobile-5, .grid-mobile-6, .grid-mobile-7, .grid-mobile-8, .grid-mobile-9, .grid-mobile-10, .grid-mobile-11, .grid-mobile-12, .grid-tablet-portrait-0, .grid-tablet-portrait-1, .grid-tablet-portrait-2, .grid-tablet-portrait-3, .grid-tablet-portrait-4, .grid-tablet-portrait-5, .grid-tablet-portrait-6, .grid-tablet-portrait-7, .grid-tablet-portrait-8, .grid-tablet-portrait-9, .grid-tablet-portrait-10, .grid-tablet-portrait-11, .grid-tablet-portrait-12, .grid-tablet-landscape-0, .grid-tablet-landscape-1, .grid-tablet-landscape-2, .grid-tablet-landscape-3, .grid-tablet-landscape-4, .grid-tablet-landscape-5, .grid-tablet-landscape-6, .grid-tablet-landscape-7, .grid-tablet-landscape-8, .grid-tablet-landscape-9, .grid-tablet-landscape-10, .grid-tablet-landscape-11, .grid-tablet-landscape-12, .grid-desktop-0, .grid-desktop-1, .grid-desktop-2, .grid-desktop-3, .grid-desktop-4, .grid-desktop-5, .grid-desktop-6, .grid-desktop-7, .grid-desktop-8, .grid-desktop-9, .grid-desktop-10, .grid-desktop-11, .grid-desktop-12, header .header, .owl-theme .owl-controls, #hero-container, #page-body #page-content, #featured-products .header, .product-grid, .product-grid .product, .related-products.product-grid .product, .related-products.product-grid h3, #product #page-header .introduction, #product #product-images,
+#product .text, footer .footer-nav,
 footer .connect, footer .mail-signup, #baseline #shop-details, #baseline #payment-methods {
   display: inline-block;
   min-height: 1px;
@@ -5075,8 +5075,17 @@ header #header-bottom {
 }
 
 /* line 529, ../_dev/sass/style.scss */
+#product #page-header .introduction {
+  float: left;
+  direction: ltr;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  text-align: center;
+}
+/* line 536, ../_dev/sass/style.scss */
 #product #product-images,
-#product #product-details {
+#product .text {
   float: left;
   direction: ltr;
   padding-left: 20px;
@@ -5084,50 +5093,50 @@ header #header-bottom {
   width: 100%;
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 529, ../_dev/sass/style.scss */
+  /* line 536, ../_dev/sass/style.scss */
   #product #product-images,
-  #product #product-details {
+  #product .text {
     width: 50%;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 529, ../_dev/sass/style.scss */
+  /* line 536, ../_dev/sass/style.scss */
   #product #product-images,
-  #product #product-details {
+  #product .text {
     width: 50%;
   }
 }
 @media screen and (min-width: 1025px) {
-  /* line 529, ../_dev/sass/style.scss */
+  /* line 536, ../_dev/sass/style.scss */
   #product #product-images,
-  #product #product-details {
+  #product .text {
     width: 50%;
   }
 }
-/* line 536, ../_dev/sass/style.scss */
+/* line 543, ../_dev/sass/style.scss */
 #product #product-images img {
   width: 100%;
   height: 100%;
 }
-/* line 542, ../_dev/sass/style.scss */
-#product #product-details {
+/* line 549, ../_dev/sass/style.scss */
+#product .text {
   overflow: hidden;
 }
-/* line 547, ../_dev/sass/style.scss */
-#product #product-details .product-description p a {
+/* line 554, ../_dev/sass/style.scss */
+#product .text .product-description p a {
   text-decoration: underline;
 }
-/* line 554, ../_dev/sass/style.scss */
-#product #product-details .product-description .product-options .purchase-section .purchase .btn {
+/* line 561, ../_dev/sass/style.scss */
+#product .text .product-description .product-options .purchase-section .purchase .btn {
   border: 1px solid #272727;
   background: #fff;
 }
 
-/* line 569, ../_dev/sass/style.scss */
+/* line 576, ../_dev/sass/style.scss */
 footer {
   clear: both;
 }
-/* line 571, ../_dev/sass/style.scss */
+/* line 578, ../_dev/sass/style.scss */
 footer .footer-container {
   overflow: hidden;
   margin: 0 20px;
@@ -5135,14 +5144,14 @@ footer .footer-container {
   border-top: 1px solid #e3e3e3;
   border-bottom: 1px solid #e3e3e3;
 }
-/* line 579, ../_dev/sass/style.scss */
+/* line 586, ../_dev/sass/style.scss */
 footer h3 {
   margin: 0 0 14px;
   font: normal 14px 'oswaldbook';
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 585, ../_dev/sass/style.scss */
+/* line 592, ../_dev/sass/style.scss */
 footer .footer-nav,
 footer .connect {
   float: left;
@@ -5152,51 +5161,51 @@ footer .connect {
   width: 25%;
 }
 @media screen and (max-width: 600px) {
-  /* line 585, ../_dev/sass/style.scss */
+  /* line 592, ../_dev/sass/style.scss */
   footer .footer-nav,
   footer .connect {
     width: 50%;
   }
 }
-/* line 590, ../_dev/sass/style.scss */
+/* line 597, ../_dev/sass/style.scss */
 footer .footer-nav ul,
 footer .connect ul {
   margin: -1px 0 0;
 }
-/* line 592, ../_dev/sass/style.scss */
+/* line 599, ../_dev/sass/style.scss */
 footer .footer-nav ul li,
 footer .connect ul li {
   font-size: 14px;
   line-height: 24px;
 }
-/* line 596, ../_dev/sass/style.scss */
+/* line 603, ../_dev/sass/style.scss */
 footer .footer-nav ul li a,
 footer .connect ul li a {
   color: #272727;
   text-decoration: none;
 }
-/* line 599, ../_dev/sass/style.scss */
+/* line 606, ../_dev/sass/style.scss */
 footer .footer-nav ul li a:hover,
 footer .connect ul li a:hover {
   color: #929292;
 }
-/* line 606, ../_dev/sass/style.scss */
+/* line 613, ../_dev/sass/style.scss */
 footer .footer-nav {
   padding-left: 0;
 }
-/* line 608, ../_dev/sass/style.scss */
+/* line 615, ../_dev/sass/style.scss */
 footer .footer-nav ul li {
   font-size: 13px;
 }
-/* line 612, ../_dev/sass/style.scss */
+/* line 619, ../_dev/sass/style.scss */
 footer .connect {
   padding-right: 0;
 }
-/* line 614, ../_dev/sass/style.scss */
+/* line 621, ../_dev/sass/style.scss */
 footer .connect ul li {
   overflow: hidden;
 }
-/* line 617, ../_dev/sass/style.scss */
+/* line 624, ../_dev/sass/style.scss */
 footer .connect ul li:before {
   float: left;
   padding: 1px 10px 0 0;
@@ -5216,23 +5225,23 @@ footer .connect ul li:before {
   font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
-/* line 636, ../_dev/sass/style.scss */
+/* line 643, ../_dev/sass/style.scss */
 footer .connect ul li:before a {
   float: left;
 }
-/* line 640, ../_dev/sass/style.scss */
+/* line 647, ../_dev/sass/style.scss */
 footer .connect ul li.facebook:before {
   content: 'facebook';
 }
-/* line 643, ../_dev/sass/style.scss */
+/* line 650, ../_dev/sass/style.scss */
 footer .connect ul li.pinterest:before {
   content: 'pinterest';
 }
-/* line 646, ../_dev/sass/style.scss */
+/* line 653, ../_dev/sass/style.scss */
 footer .connect ul li.twitter:before {
   content: 'twitter';
 }
-/* line 652, ../_dev/sass/style.scss */
+/* line 659, ../_dev/sass/style.scss */
 footer .mail-signup {
   float: left;
   direction: ltr;
@@ -5241,24 +5250,24 @@ footer .mail-signup {
   width: 50%;
 }
 @media screen and (max-width: 600px) {
-  /* line 652, ../_dev/sass/style.scss */
+  /* line 659, ../_dev/sass/style.scss */
   footer .mail-signup {
     width: 100%;
   }
 }
-/* line 656, ../_dev/sass/style.scss */
+/* line 663, ../_dev/sass/style.scss */
 footer .mail-signup p {
   font-size: 13px;
   line-height: 22px;
 }
-/* line 660, ../_dev/sass/style.scss */
+/* line 667, ../_dev/sass/style.scss */
 footer .mail-signup form {
   overflow: hidden;
   position: relative;
   margin: 18px 0 0;
   padding-right: 235px;
 }
-/* line 666, ../_dev/sass/style.scss */
+/* line 673, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="text"] {
   float: left;
   padding: 0 0 0 10px;
@@ -5273,11 +5282,11 @@ footer .mail-signup form input[type="text"] {
   outline: none;
   box-sizing: border-box;
 }
-/* line 676, ../_dev/sass/style.scss */
+/* line 683, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="text"]:focus {
   border: 1px solid #272727;
 }
-/* line 680, ../_dev/sass/style.scss */
+/* line 687, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="submit"] {
   position: absolute;
   top: 0;
@@ -5297,80 +5306,80 @@ footer .mail-signup form input[type="submit"] {
   -o-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
   transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
 }
-/* line 700, ../_dev/sass/style.scss */
+/* line 707, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="submit"]:hover {
   background-color: #fff;
   color: #272727;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 708, ../_dev/sass/style.scss */
+  /* line 715, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 150px;
   }
-  /* line 711, ../_dev/sass/style.scss */
+  /* line 718, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 10px;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 717, ../_dev/sass/style.scss */
+  /* line 724, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 80px;
   }
-  /* line 720, ../_dev/sass/style.scss */
+  /* line 727, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 0px;
     width: 70px;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 727, ../_dev/sass/style.scss */
+  /* line 734, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 140px;
   }
-  /* line 730, ../_dev/sass/style.scss */
+  /* line 737, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 0px;
   }
 }
-/* line 736, ../_dev/sass/style.scss */
+/* line 743, ../_dev/sass/style.scss */
 footer #mail-list-mobile {
   padding-left: 0;
   padding-right: 0;
   margin: 28px 0 0;
 }
 @media screen and (min-width: 1025px) {
-  /* line 742, ../_dev/sass/style.scss */
+  /* line 749, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 742, ../_dev/sass/style.scss */
+  /* line 749, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 742, ../_dev/sass/style.scss */
+  /* line 749, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 747, ../_dev/sass/style.scss */
+  /* line 754, ../_dev/sass/style.scss */
   footer #mail-list {
     display: none;
   }
 }
 
-/* line 752, ../_dev/sass/style.scss */
+/* line 759, ../_dev/sass/style.scss */
 #baseline {
   overflow: hidden;
   display: block;
   margin: 39px 0 40px;
 }
-/* line 757, ../_dev/sass/style.scss */
+/* line 764, ../_dev/sass/style.scss */
 #baseline #shop-details {
   float: left;
   direction: ltr;
@@ -5378,13 +5387,13 @@ footer #mail-list-mobile {
   padding-right: 20px;
   width: 50%;
 }
-/* line 759, ../_dev/sass/style.scss */
+/* line 766, ../_dev/sass/style.scss */
 #baseline #shop-details p {
   text-align: left;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 765, ../_dev/sass/style.scss */
+/* line 772, ../_dev/sass/style.scss */
 #baseline #payment-methods {
   float: left;
   direction: ltr;
@@ -5392,7 +5401,7 @@ footer #mail-list-mobile {
   padding-right: 20px;
   width: 50%;
 }
-/* line 767, ../_dev/sass/style.scss */
+/* line 774, ../_dev/sass/style.scss */
 #baseline #payment-methods img {
   float: right;
 }
