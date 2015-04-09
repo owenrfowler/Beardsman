@@ -6,7 +6,6 @@
 @import 'compass/css3/background-size';
 @import "ceaser-easing";
 
-
 // grid framework
 @import "grid";
 
@@ -23,22 +22,23 @@ $carat-select: #8f8f8f;
 // mixins
 
 @mixin border-radius ($border-radius) {
-  border-radius: $border-radius;
-  -moz-border-radius: $border-radius;
-  -webkit-border-radius: $border-radius;
-  -o-border-radius: $border-radius;
+border-radius: $border-radius;
+-moz-border-radius: $border-radius;
+-webkit-border-radius: $border-radius;
+-o-border-radius: $border-radius;
 }
 
 
 /*
 ***
-   bootstrap overides
+bootstrap overides
 ***
 */
 
 .btn {
   @include border-radius(3px);
 }
+
 
 
 
@@ -49,7 +49,7 @@ body {
   color: #272727;
 }
 
-  // Page Layout
+// Page Layout
 
 #page {
   display: block;
@@ -58,11 +58,8 @@ body {
   padding: 0 20px;
   min-width: 480px;
   box-sizing: border-box;
-  
-  // @include gridle_state( tablet-portrait tablet-landscape desktop ){
-  //   padding: 0px;
-  // }
 }
+
 #body {
   margin: 0 0 40px;
   position: relative;
@@ -71,11 +68,12 @@ body {
 
 .content {
   @include gridle_centered ( );
-  overflow: hidden;
+
   max-width: 1160px;
 }
 
 header {
+  @include clearfix();
   position: relative;
   z-index: 11;
   .content{
@@ -90,10 +88,7 @@ header {
       height: 40px;
       border-bottom: 1px solid #e3e3e3;
       @include ceaser-transition(padding, 500ms, $ease);
-      // -moz-transition: padding 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-      // -webkit-transition: padding 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-      // transition: padding 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-
+      
       a {
         text-decoration: none;
       }
@@ -112,7 +107,7 @@ header {
 
       @include gridle_state ( desktop ){
         padding: 30px 0;
-        
+
         #logo {
           margin: 2px 0 0;
           font-size: 37px;
@@ -120,8 +115,8 @@ header {
       }
 
       #status {
-        
         float: right;
+      
         #login {
           display: inline-block;
           float: left;
@@ -130,103 +125,95 @@ header {
           font-size: 14px;
           font-weight: 300;
         }
-
+        
         form {
+          float: left;
+          outline: none;
           margin: 0px;
           width: 0px;
           height: 0px;
           opacity: 0;
           @include ceaser-transition(all, 500ms, $ease);
-          // -moz-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          // -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          // transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          
+
           @include gridle_state (tablet-portrait tablet-landscape desktop) {
             margin: 0 0 0 20px;
             width: 90px;
             height: 40px;
             opacity: 1;
           }
-
-          float: left;
-          outline: none;
-            .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-              width: 90px;
-            }
-            .bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*="span"] {
-              margin-bottom: 0px;
-            }
-            .bootstrap-select .btn:focus {
-              outline: none !important;
-              border-color: $carat-select;
-              background-color: #e3e3e3;
-            }
-            .btn-default {
-              color: #272727;
-              &:hover {
-                background-color: transparent;
-              }
-            }
-            .btn {
-              padding: 10px 10px 9px 20px;
-              // font-size: 13px;
-              text-transform: uppercase;
-              font: normal 13px "oswaldbook";
-              border-color: #e3e3e3;
-              @include ceaser-transition(all, 500ms, $ease);
-              // -moz-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-              // -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-              // transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-
-              
-            }
-
-            .btn-group.open .dropdown-toggle {
-              border-color: $carat-select;
-              box-shadow: none;
-            }
-            .open > .btn-default.dropdown-toggle {
-              background-color: #e3e3e3;
-            }
-
-            .bootstrap-select.btn-group .dropdown-menu li > a span {
-              text-transform: uppercase;
-            }
+      
+          .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+            width: 90px;
+          }
+          .bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*="span"] {
+            margin-bottom: 0px;
+          }
+          .bootstrap-select .btn:focus {
+            outline: none !important;
+            border-color: $carat-select;
+            background-color: #e3e3e3;
+          }
+          .btn-default {
+            color: #272727;
             
-            .caret {
-              top: 10px;
-              right: 28px;
-              border: 0px;
-              &::before {
-                font-family: "SSStandard";
-                font-size: 8px;
-                font-style: normal;
-                font-weight: normal;
-                text-decoration: none;
-                text-rendering: optimizeLegibility;
-                white-space: nowrap;
-                /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
-                -moz-font-feature-settings: "liga=1";
-                -moz-font-feature-settings: "liga";
-                -ms-font-feature-settings: "liga" 1;
-                -o-font-feature-settings: "liga";
-                font-feature-settings: "liga";
-                -webkit-font-smoothing: antialiased;
-                color: $carat-select;
-              
-              }
+            &:hover {
+              background-color: transparent;
             }
-            .bootstrap-select .dropdown-toggle .caret:before {
-              content: 'navigatedown';
-            }
-            .bootstrap-select.open .dropdown-toggle .caret:before {
-              content: 'navigateup';
-            }
+          }
+          .btn {
+            padding: 10px 10px 9px 20px;
+            // font-size: 13px;
+            text-transform: uppercase;
+            font: normal 13px "oswaldbook";
+            border-color: #e3e3e3;
+            @include ceaser-transition(all, 500ms, $ease);
+          }
 
-            .dropdown-menu {
-              @include border-radius (0px);
+          .btn-group.open .dropdown-toggle {
+            border-color: $carat-select;
+            box-shadow: none;
+          }
+          .open > .btn-default.dropdown-toggle {
+            background-color: #e3e3e3;
+          }
+          .bootstrap-select.btn-group .dropdown-menu li > a span {
+            text-transform: uppercase;
+          }
+
+          .caret {
+            top: 10px;
+            right: 28px;
+            border: 0px;
+            
+            &::before {
+              font-family: "SSStandard";
+              font-size: 8px;
+              font-style: normal;
+              font-weight: normal;
+              text-decoration: none;
+              text-rendering: optimizeLegibility;
+              white-space: nowrap;
+              /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+              -moz-font-feature-settings: "liga=1";
+              -moz-font-feature-settings: "liga";
+              -ms-font-feature-settings: "liga" 1;
+              -o-font-feature-settings: "liga";
+              font-feature-settings: "liga";
+              -webkit-font-smoothing: antialiased;
+              color: $carat-select;
             }
-        }
+          }
+          .bootstrap-select .dropdown-toggle .caret:before {
+            content: 'navigatedown';
+          }
+          .bootstrap-select.open .dropdown-toggle .caret:before {
+            content: 'navigateup';
+          }
+
+          .dropdown-menu {
+            @include border-radius (0px);
+          }
+        } // form
 
         #cart {
           overflow: hidden;
@@ -243,90 +230,91 @@ header {
             font: normal 13px "oswaldbook";
             letter-spacing: 2px;
             color: #272727;
-
+              
             .icon-cart {
               color: $carat-select;
               font-family: "SSStandard";
               font-size: 12px;
             }
+
             #cart-count {
 
             }
           }
-        }
-      }
-    }
-  }
+        }// #cart  
+      } // #status
+    } //header-top
 
-  #header-bottom {
-    display: none;
+    #header-bottom {
+      display: none;
 
-    @include gridle_state (desktop tablet-landscape tablet-portrait) {
-      display: block;
-      overflow: hidden;
-      padding: 20px 0;
-
-      #nav {
+      @include gridle_state (desktop tablet-landscape tablet-portrait) {
+        display: block;
         overflow: hidden;
-        float: left;
-        // @include gridle(8);
-        // @include gridle-no-gutter;
-        list-style: none;
-        
-        li {
-          display: inline-block;
+        padding: 20px 0;
+
+        #nav {
+          overflow: hidden;
           float: left;
-          margin: 0 40px 0 0;
-          font: normal 14px "oswaldbook";
-          text-transform: uppercase;
+          // @include gridle(8);
+          // @include gridle-no-gutter;
+          list-style: none;
 
-          letter-spacing: 1.5px;
+          li {
+            display: inline-block;
+            float: left;
+            margin: 0 40px 0 0;
+            font: normal 14px "oswaldbook";
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
 
-          &:last-child {
-            margin: 0;
+            &:last-child {
+              margin: 0;
+            }
+            a {
+              color: #272727;
+              text-decoration: none;
+              &.active,
+              &:hover {
+                color: #929292;
+              }
+            }
           }
+        }
 
-          a {
-            color: #272727;
-            text-decoration: none;
-            &.active,
-            &:hover {
-              color: #929292;
+        #ship-rates {
+        overflow: hidden;
+        float: right;
+
+          img {
+            display: inline-block;
+            float: left;
+          }
+          p {
+            display: inline-block;
+            margin: 4px 0 0 10px;
+            font-size: 14px;
+
+            span {
+              font-weight: 700;
             }
           }
         }
       }
-      #ship-rates {
-        overflow: hidden;
-        float: right;
+    }
 
-        img {
-          display: inline-block;
-          float: left;
-        }
-        p {
-          display: inline-block;
-          margin: 4px 0 0 10px;
-          font-size: 14px;
-          
-          span {
-            font-weight: 700;
-          }
-        }
+    #header-mobile {
+      @include gridle_state (desktop tablet-landscape tablet-portrait) {
+        display: none;
       }
     }
   }
-  #header-mobile {
-    @include gridle_state (desktop tablet-landscape tablet-portrait) {
-      display: none;
-    }
-  }
 } 
-// header
+      // header
 
 /**
 
-  Carousel
+Carousel
 
 **/
 
@@ -338,14 +326,12 @@ header {
   @include gridle(12);
 }
 #hero {
-  
-
-  #progressBar{
-    position: absolute;
-    bottom: 0;
-    z-index: 3;
-    width: 100%;
-    background: grey;
+    #progressBar{
+      position: absolute;
+      bottom: 0;
+      z-index: 3;
+      width: 100%;
+      background: grey;
 
     #bar{
       width: 0%;
@@ -355,20 +341,29 @@ header {
     }
   }
 
+  .owl-controls{
+    @include gridle(12);
+    @include gridle_parent();
+    position: absolute;
+    bottom: 20px;
+    z-index: 5;
+    margin: 0;
+  }
+
   .owl-wrapper-outer {
     .owl-wrapper {
-      // background-color: #000;
+  // background-color: #000;
 
       .owl-item {
         .slide {
-          padding: 110px 0 0 40px;
-          height: 480px;
+          padding: 80px 0 0 40px;
+          height: 350px;
           box-sizing: border-box;
           background-repeat: no-repeat;
           background-position: center center;
           @include background-size(cover);
           @include ceaser-transition(all, 500ms, $ease);
-                    
+
           @include gridle_state (tablet-landscape){
             padding-top: 90px;
             height: 420px;
@@ -377,9 +372,9 @@ header {
             padding-top: 70px;
             height: 380px;
           }
-          @include gridle_state (mobile){
-            padding-top: 80px;
-            height: 350px;
+          @include gridle_state (desktop){
+            padding-top: 110px;
+            height: 480px;  
           }
 
           .text {
@@ -434,24 +429,19 @@ header {
   }
 }
 
-  // Page-header section
+// Page-header and Page-body Mains
 
 
 #page-header {
   position: relative;
   z-index: 10;
-  h1 {
+   h1 {
     font: normal 32px "neuzeit_groteskregular";
     text-align: center;
   }
 }
 
 #page-body {
-  overflow: hidden;
-
-  .content {
-
-  }
   #page-content {
     @include gridle(12);
   }
@@ -465,11 +455,13 @@ header {
     @include gridle(12);
     padding: 72px 0 31px;
     text-align: center;
+
     h2 {
       font: normal 32px "neuzeit_groteskregular";
     }
   }
 }
+
 .product-grid {
   @include gridle(12);
   @include gridle_parent();
@@ -504,15 +496,17 @@ header {
       }
     }
   }
-}
+} // end product grid
 
- // related = grid layout 
+
+// related = grid layout 
 .related-products.product-grid {
   margin: 40px 0 0;
-    .product {
-      @include gridle(6);
-      @include gridle( 3, desktop );
-    }
+  
+  .product {
+    @include gridle(6);
+    @include gridle( 3, tablet-landscape desktop );
+  }
   h3 {
     @include gridle(12);
     display: block;
@@ -524,7 +518,13 @@ header {
 
 // Single products
 
-#product {
+
+.product-page {
+
+  #product {
+    @include clearfix( );
+  }
+
   #page-header {
     .introduction {
       @include gridle(12);
@@ -532,247 +532,328 @@ header {
     }
   }
 
+  #page-body {
+    @include gridle_parent( );
 
-  #product-images,
-  .text {
-    @include gridle(12);
-    @include gridle( 6, tablet-portrait tablet-landscape desktop );
-  }
+    fieldset {
+      @include clearfix( );
 
-  #product-images {
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+/* ============================================ 
+Images column
+*/
 
-  .text {
-    overflow: hidden;
+      #images {
+        // @include gridle( 12 );
+        @include gridle( 6, tablet-portrait tablet-landscape desktop );
+        @include gridle( 12 );
 
-   .product-description {
-      p {
-        a {
-          text-decoration: underline;
+        max-width: 100%;
+        
+        @include gridle_state( tablet-portrait tablet-landscape desktop ){
+          max-width: 540px;
         }
-      }
-      .product-options {
-        .purchase-section {
-          .purchase {
-            .btn {
-              border: 1px solid #272727;
-              background: #fff;
+
+        position: relative;
+
+        .viewport {
+          position: relative; 
+
+          a {
+            cursor: default;
+            display: block;
+
+            img {
+              width: 100%;
+              height: 100%;
+
+              .small { display: block; }
             }
           }
-
         }
+        .owl-controls {
+          position: absolute;
+
+          z-index: 5;
+        }
+        ul {
+          position: absolute;
+          bottom: 0px;
+          right: 40px;
+          z-index: 10;
+
+          li {
+            a {
+              color: rgba(#fff, 0.15);
+              font-size: 32px;
+              cursor: pointer;
+            }
+          }
+        }
+
+        &.zoom {
+          img {
+            cursor: none;
+          }
+        }
+
+        /*Lets create the magnifying glass*/
+        .large {
+          width: 250px; height: 250px;
+          position: absolute;
+          z-index: 2;
+          border-radius: 100%;
+
+          /*Multiple box shadows to achieve the glass effect*/
+          box-shadow: 0 0 0 7px rgba(#797979, 0.85), 
+          0 0 7px 7px rgba(0, 0, 0, 0.25), 
+          inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+
+          /*hide the glass by default*/
+          display: none;
+          cursor: none;
+        }
+
+        /*To solve overlap bug at the edges during magnification*/
+        
+
+        .thumbnails {
+          overflow: hidden;
+
+          li {
+            @include gridle( 2 );
+            padding: 0 !important;
+            margin: 26px 20px 0 0; // changed 4/4/15
+
+            a {
+              display: block;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      } // #images 
+
+      .text {
+        @include gridle( 12, mobile );
+        @include gridle( 6, tablet-portrait tablet-landscape desktop );
+        @include gridle_state(mobile){
+          text-align: left;  
+        }
+        
       }
-    }
-  }
+
+    } // fieldset
+  } // #page-body
+
+} // END SINGLE PRODUCT
+
+footer {
+clear: both;
+.footer-container {
+overflow: hidden;
+margin: 0 20px;
+padding: 46px 0;
+border-top: 1px solid #e3e3e3;
+border-bottom: 1px solid #e3e3e3;
 }
 
-// footer
+h3 {
+margin: 0 0 14px;
+font: normal 14px 'oswaldbook';
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+.footer-nav,
+.connect {
+@include gridle(3);
+@include gridle( 6, mobile );
+
+ul {
+margin: -1px 0 0;
+li {
+font-size: 14px;
+line-height: 24px;
+
+a {
+color: #272727;
+text-decoration: none;
+&:hover {
+color: #929292;
+}
+}
+}
+}
+}
+.footer-nav  {
+@include gridle_no_gutter(left);
+ul li {
+font-size: 13px;
+}
+}
+.connect {
+@include gridle_no_gutter(right);
+ul li {
+overflow: hidden;
+
+&:before {
+float: left;
+padding: 1px 10px 0 0;
+color: #8f8f8f;
+font-size: 13px;
+font-family: "SSSocialRegular";
+font-style: normal;
+font-weight: normal;
+text-decoration: none;
+text-rendering: optimizeLegibility;
+white-space: nowrap;
+/*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+-moz-font-feature-settings: "liga=1";
+-moz-font-feature-settings: "liga";
+-ms-font-feature-settings: "liga" 1;
+-o-font-feature-settings: "liga";
+font-feature-settings: "liga";
+-webkit-font-smoothing: antialiased;
+
+a {
+float: left;
+}  
+}
+&.facebook:before {
+content: 'facebook';
+}
+&.pinterest:before {
+content: 'pinterest';
+}
+&.twitter:before {
+content: 'twitter';
+}
+}
+}
+
+.mail-signup {
+@include gridle(6);
+@include gridle( 12, mobile );
+
+p {
+font-size: 13px;
+line-height: 22px;
+}
+form {
+overflow: hidden;
+position: relative;
+margin: 18px 0 0;
+padding-right: 235px;
+
+input[type="text"]{
+float: left;
+padding: 0 0 0 10px;
+width: 100%;
+height: 40px;
+border: 1px solid $divider;
+@include border-radius (2px);
+font: 14px/24px 'source_code_proregular';
+outline: none;
+box-sizing: border-box;
+&:focus {
+border: 1px solid #272727;
+}
+}
+input[type="submit"] {
+position: absolute;
+top: 0;
+right: 95px;  
+margin: 0 0 0 10px;
+width: 130px;
+height: 40px;
+background-color: #272727;
+border: 1px solid #272727;
+color: #fff;
+font: normal 13px 'oswaldbook';
+text-align: center;
+text-transform: uppercase;
+cursor: pointer;
+box-sizing: border-box;
+@include ceaser-transition(all, 500ms, $ease);
+// -moz-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+// -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+// transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+
+&:hover {
+
+background-color: #fff;
+color: #272727;
+}
+}
+}
+@include gridle_state( tablet-landscape ){
+form {
+padding-right: 150px;
+
+input[type="submit"] {
+right: 10px;
+}  
+}
+}
+@include gridle_state( tablet-portrait ){
+form {
+padding-right: 80px;
+
+input[type="submit"] {
+right: 0px;
+width: 70px;
+}  
+}
+}
+@include gridle_state( mobile ){
+form {
+padding-right: 140px;
+
+input[type="submit"] {
+right: 0px;
+}  
+}
+}
+}
+
+#mail-list {
+display: none;
+@include gridle_state( desktop tablet-landscape tablet-portrait ) {
+display: block;
+}
+}
+#mail-list-mobile {
+@include gridle_no_gutter(left right);
+margin: 28px 0 0;
+
+@include gridle_state( desktop tablet-landscape tablet-portrait ) {
+display: none;
+}
+}
+}
+
+// footer end
 
 
-  footer {
-    clear: both;
-    .footer-container {
-      overflow: hidden;
-      margin: 0 20px;
-      padding: 46px 0;
-      border-top: 1px solid #e3e3e3;
-      border-bottom: 1px solid #e3e3e3;
-    }
+#baseline {
+overflow: hidden;
+display: block;
+margin: 39px 0 40px;
 
-    h3 {
-      margin: 0 0 14px;
-      font: normal 14px 'oswaldbook';
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    .footer-nav,
-    .connect {
-      @include gridle(3);
-      @include gridle( 6, mobile );
-
-      ul {
-        margin: -1px 0 0;
-         li {
-          font-size: 14px;
-          line-height: 24px;
-
-          a {
-            color: #272727;
-            text-decoration: none;
-            &:hover {
-              color: #929292;
-            }
-          }
-        }
-      }
-    }
-    .footer-nav  {
-      @include gridle_no_gutter(left);
-      ul li {
-        font-size: 13px;
-      }
-    }
-    .connect {
-      @include gridle_no_gutter(right);
-      ul li {
-        overflow: hidden;
-
-        &:before {
-          float: left;
-          padding: 1px 10px 0 0;
-          color: #8f8f8f;
-          font-size: 13px;
-          font-family: "SSSocialRegular";
-          font-style: normal;
-          font-weight: normal;
-          text-decoration: none;
-          text-rendering: optimizeLegibility;
-          white-space: nowrap;
-          /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
-          -moz-font-feature-settings: "liga=1";
-          -moz-font-feature-settings: "liga";
-          -ms-font-feature-settings: "liga" 1;
-          -o-font-feature-settings: "liga";
-          font-feature-settings: "liga";
-          -webkit-font-smoothing: antialiased;
-
-          a {
-            float: left;
-          }  
-        }
-        &.facebook:before {
-          content: 'facebook';
-        }
-        &.pinterest:before {
-          content: 'pinterest';
-        }
-        &.twitter:before {
-          content: 'twitter';
-        }
-      }
-    }
-
-    .mail-signup {
-      @include gridle(6);
-      @include gridle( 12, mobile );
-
-      p {
-        font-size: 13px;
-        line-height: 22px;
-      }
-      form {
-        overflow: hidden;
-        position: relative;
-        margin: 18px 0 0;
-        padding-right: 235px;
-
-        input[type="text"]{
-          float: left;
-          padding: 0 0 0 10px;
-          width: 100%;
-          height: 40px;
-          border: 1px solid $divider;
-          @include border-radius (2px);
-          font: 14px/24px 'source_code_proregular';
-          outline: none;
-          box-sizing: border-box;
-          &:focus {
-            border: 1px solid #272727;
-          }
-        }
-        input[type="submit"] {
-          position: absolute;
-          top: 0;
-          right: 95px;  
-          margin: 0 0 0 10px;
-          width: 130px;
-          height: 40px;
-          background-color: #272727;
-          border: 1px solid #272727;
-          color: #fff;
-          font: normal 13px 'oswaldbook';
-          text-align: center;
-          text-transform: uppercase;
-          cursor: pointer;
-          box-sizing: border-box;
-          @include ceaser-transition(all, 500ms, $ease);
-          // -moz-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          // -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          // transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-
-          &:hover {
-
-            background-color: #fff;
-            color: #272727;
-          }
-        }
-      }
-      @include gridle_state( tablet-landscape ){
-        form {
-          padding-right: 150px;
-
-          input[type="submit"] {
-            right: 10px;
-          }  
-        }
-      }
-      @include gridle_state( tablet-portrait ){
-        form {
-          padding-right: 80px;
-
-          input[type="submit"] {
-            right: 0px;
-            width: 70px;
-          }  
-        }
-      }
-      @include gridle_state( mobile ){
-        form {
-          padding-right: 140px;
-
-          input[type="submit"] {
-            right: 0px;
-          }  
-        }
-      }
-    }
-    #mail-list-mobile {
-      @include gridle_no_gutter(left right);
-      margin: 28px 0 0;
-    }
-
-    @include gridle_state( desktop tablet-landscape tablet-portrait ) {
-      #mail-list-mobile {
-        display: none;
-      }
-    }
-    @include gridle_state( mobile ){
-      #mail-list {
-        display: none;
-      }
-    }
-  }
-  #baseline {
-    overflow: hidden;
-    display: block;
-    margin: 39px 0 40px;
-
-    #shop-details {
-      @include gridle(6);
-      p {
-        text-align: left;
-        font-size: 14px;
-        line-height: 24px;
-      }  
-    }
-    #payment-methods {
-      @include gridle(6);
-      img {
-        float: right;
-      }
-    }
-  }
+#shop-details {
+@include gridle(6);
+p {
+text-align: left;
+font-size: 14px;
+line-height: 24px;
+}  
+}
+#payment-methods {
+@include gridle(6);
+img {
+float: right;
+}
+}
+}

@@ -7,6 +7,8 @@
 {% endif %}
 
 <div id="product" class="{{ product.handle }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+  <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}" />
   
   <div id="page-header">
     <div class="content">
@@ -19,44 +21,30 @@
     </div>  
   </div>
 
-  <div id="page-body">
-    <div class="content">
-      <div id="product-images">
-        {% comment %}
-          Display Featured Image for Product
-          See Shopify Image Spec for image size references - assume uploaded image is 2048*2048
-        {% endcomment %}
-        <!-- Begin featured image -->
+  <form id="page-body" action="/cart/add" method="post" enctype="multipart/form-data">
+    <fieldset class="content">
 
-        <!-- End product image -->
-        <div class="large"></div>
-        <div class="viewport">
-          {% for image in product.images %}
-          <a href="{{ image.src | product_img_url: 'master' }}" title="{{ image.alt | escape }}">
-            <img class="small" src="{{ image.src | product_img_url: 'master' }}" title="{{ image.alt | escape }}" alt="{{ image.alt | escape }}" />
-          </a>
-          {% endfor %}
-        </div>
-        <ul>
-          <li class="zoom"><a href="#">zoomin</a></li>
-        </ul>
+    <div id="images">
+      {% comment %}
+        Display Featured Image for Product
+        See Shopify Image Spec for image size references - assume uploaded image is 2048*2048
+      {% endcomment %}
+      <!-- Begin featured image -->
 
-      </div><!-- product-images -->
+      <!-- End product image -->
+      <div class="large"></div>
+      <div class="viewport">
+        {% for image in product.images %}
+        <a href="{{ image.src | product_img_url: 'master' }}" title="{{ image.alt | escape }}">
+          <img class="small" src="{{ image.src | product_img_url: 'master' }}" title="{{ image.alt | escape }}" alt="{{ image.alt | escape }}" />
+        </a>
+        {% endfor %}
+      </div>
+      <ul>
+        <li class="zoom"><a href="#">zoomin</a></li>
+      </ul>
 
-{% comment %}          {% if settings.enable_product_image_zoom %}
-          <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
-            <a href="{{ image | product_img_url: '1024x1024' }}" class="cloud-zoom-gallery">
-              <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
-            </a>
-          </div>
-          {% else %}
-          <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
-            <a href="{{ image | product_img_url: '1024x1024' }}" data-original-image="{{ image | product_img_url: '1024x1024' }}">
-              <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
-            </a>
-          </div>
-          {% endif %}{% endcomment %}
-
+    </div><!-- product-images -->
     
     <!-- Begin description -->
       <div class="text">
@@ -83,12 +71,12 @@
               </select>
             </div>
 
-            {% if settings.display_quantity_dropdown %}
+{% comment %}            {% if settings.display_quantity_dropdown %}
             <div class="selector-wrapper">
               <label>{{ 'products.product.quantity' | t }}</label>
               <input id="quantity" type="number" name="quantity" value="1" class="tc item-quantity" />
             </div>
-            {% endif %}
+            {% endif %}{% endcomment %}
 
             <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
               <div class="purchase">
@@ -102,35 +90,32 @@
                 {% endunless %}
               </div>
             </div>
+            <div class="buttons">
+              {% if showPrice %}
+              <input type="submit" name="add" id="add" value="Add to cart" title="Add to cart">
+              {% else %}
+              <input type="button" name="contactButton" value="Contact Us For More Information" data-toggle="modal" data-target="#modal" title="Contact us for more information">
+              {% endif %}
+            </div>
           </div>
           <!-- End product options -->
 
         </form>
-
-        <div class="product-description">
-          {{ product.description }}
-        </div>
-
       </div><!-- .product-details -->
       <!-- End description -->
     {% comment %}<div class="span12"><div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div></div>
     </div>{% endcomment %}
+    </fieldset><!-- .content -->
+  </form><!-- #page-body -->
 
-    <!-- Begin related product -->
-      {% if settings.show_related_products %}
-        {% include 'related-products' %}
-      {% endif %}
-
-    </div><!-- .content -->
-  </div><!-- #page-body -->
 </div> 
 
-<div style="display:none" id="preloading">
+{% comment %}<div style="display:none" id="preloading">
 {% for image in product.images offset: 1 %}
 {{ image | product_img_url: '1024x1024' | img_tag }}
 {% endfor %}
-</div>
-  
+</div>{% endcomment %}
+{% comment %}  
   <script>
   var selectCallback = function(variant, selector) {
     if (variant && variant.featured_image) {
@@ -162,4 +147,4 @@
 
   });
   </script>
-
+{% endcomment %}
