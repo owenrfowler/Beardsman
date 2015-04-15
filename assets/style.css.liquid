@@ -5088,6 +5088,10 @@ Carousel
   font: normal 20px "neuzeit_groteskregular";
 }
 
+/* line 524, ../_dev/sass/style.scss */
+.product-page #product {
+  overflow: hidden;
+}
 /* line 14, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-3.3.4.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .product-page #product:before, .product-page #product:after {
   content: " ";
@@ -5097,7 +5101,7 @@ Carousel
 .product-page #product:after {
   clear: both;
 }
-/* line 529, ../_dev/sass/style.scss */
+/* line 530, ../_dev/sass/style.scss */
 .product-page #page-header .introduction {
   float: left;
   direction: ltr;
@@ -5106,12 +5110,12 @@ Carousel
   width: 100%;
   text-align: center;
 }
-/* line 535, ../_dev/sass/style.scss */
+/* line 536, ../_dev/sass/style.scss */
 .product-page #page-body {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 538, ../_dev/sass/style.scss */
+/* line 539, ../_dev/sass/style.scss */
 .product-page #page-body fieldset {
   /* ============================================ 
   Images column
@@ -5126,7 +5130,7 @@ Carousel
 .product-page #page-body fieldset:after {
   clear: both;
 }
-/* line 545, ../_dev/sass/style.scss */
+/* line 546, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images {
   float: left;
   direction: ltr;
@@ -5139,37 +5143,37 @@ Carousel
   /*To solve overlap bug at the edges during magnification*/
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 545, ../_dev/sass/style.scss */
+  /* line 546, ../_dev/sass/style.scss */
   .product-page #page-body fieldset #images {
     width: 50%;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 545, ../_dev/sass/style.scss */
+  /* line 546, ../_dev/sass/style.scss */
   .product-page #page-body fieldset #images {
     width: 50%;
   }
 }
 @media screen and (min-width: 1025px) {
-  /* line 545, ../_dev/sass/style.scss */
+  /* line 546, ../_dev/sass/style.scss */
   .product-page #page-body fieldset #images {
     width: 50%;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 545, ../_dev/sass/style.scss */
+  /* line 546, ../_dev/sass/style.scss */
   .product-page #page-body fieldset #images {
     max-width: 540px;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 545, ../_dev/sass/style.scss */
+  /* line 546, ../_dev/sass/style.scss */
   .product-page #page-body fieldset #images {
     max-width: 540px;
   }
 }
 @media screen and (min-width: 1025px) {
-  /* line 545, ../_dev/sass/style.scss */
+  /* line 546, ../_dev/sass/style.scss */
   .product-page #page-body fieldset #images {
     max-width: 540px;
   }
@@ -5177,44 +5181,44 @@ Carousel
 /* line 558, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .viewport {
   position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 561, ../_dev/sass/style.scss */
+/* line 565, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .viewport a {
   cursor: default;
   display: block;
 }
-/* line 565, ../_dev/sass/style.scss */
+/* line 569, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .viewport a img {
   width: 100%;
   height: 100%;
 }
-/* line 569, ../_dev/sass/style.scss */
-.product-page #page-body fieldset #images .viewport a img .small {
-  display: block;
-}
-/* line 573, ../_dev/sass/style.scss */
+/* line 575, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .owl-controls {
   position: absolute;
   z-index: 5;
 }
-/* line 578, ../_dev/sass/style.scss */
+/* line 580, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images ul {
   position: absolute;
   bottom: 0px;
   right: 40px;
   z-index: 10;
 }
-/* line 585, ../_dev/sass/style.scss */
+/* line 587, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images ul li a {
   color: rgba(255, 255, 255, 0.15);
   font-size: 32px;
   cursor: pointer;
 }
-/* line 594, ../_dev/sass/style.scss */
+/* line 596, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images.zoom img {
   cursor: none;
 }
-/* line 600, ../_dev/sass/style.scss */
+/* line 602, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .large {
   width: 250px;
   height: 250px;
@@ -5227,11 +5231,15 @@ Carousel
   display: none;
   cursor: none;
 }
-/* line 619, ../_dev/sass/style.scss */
+/* line 620, ../_dev/sass/style.scss */
+.product-page #page-body fieldset #images .small {
+  display: block;
+}
+/* line 622, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .thumbnails {
   overflow: hidden;
 }
-/* line 622, ../_dev/sass/style.scss */
+/* line 625, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .thumbnails li {
   float: left;
   direction: ltr;
@@ -5241,16 +5249,16 @@ Carousel
   padding: 0 !important;
   margin: 26px 20px 0 0;
 }
-/* line 627, ../_dev/sass/style.scss */
+/* line 630, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .thumbnails li a {
   display: block;
 }
-/* line 630, ../_dev/sass/style.scss */
+/* line 633, ../_dev/sass/style.scss */
 .product-page #page-body fieldset #images .thumbnails li a img {
   width: 100%;
   height: 100%;
 }
-/* line 639, ../_dev/sass/style.scss */
+/* line 642, ../_dev/sass/style.scss */
 .product-page #page-body fieldset .text {
   float: left;
   direction: ltr;
@@ -5258,41 +5266,41 @@ Carousel
   padding-right: 20px;
 }
 @media screen and (max-width: 600px) {
-  /* line 639, ../_dev/sass/style.scss */
+  /* line 642, ../_dev/sass/style.scss */
   .product-page #page-body fieldset .text {
     width: 100%;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 639, ../_dev/sass/style.scss */
+  /* line 642, ../_dev/sass/style.scss */
   .product-page #page-body fieldset .text {
     width: 50%;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 639, ../_dev/sass/style.scss */
+  /* line 642, ../_dev/sass/style.scss */
   .product-page #page-body fieldset .text {
     width: 50%;
   }
 }
 @media screen and (min-width: 1025px) {
-  /* line 639, ../_dev/sass/style.scss */
+  /* line 642, ../_dev/sass/style.scss */
   .product-page #page-body fieldset .text {
     width: 50%;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 639, ../_dev/sass/style.scss */
+  /* line 642, ../_dev/sass/style.scss */
   .product-page #page-body fieldset .text {
     text-align: left;
   }
 }
 
-/* line 653, ../_dev/sass/style.scss */
+/* line 656, ../_dev/sass/style.scss */
 footer {
   clear: both;
 }
-/* line 655, ../_dev/sass/style.scss */
+/* line 658, ../_dev/sass/style.scss */
 footer .footer-container {
   overflow: hidden;
   margin: 0 20px;
@@ -5300,14 +5308,14 @@ footer .footer-container {
   border-top: 1px solid #e3e3e3;
   border-bottom: 1px solid #e3e3e3;
 }
-/* line 663, ../_dev/sass/style.scss */
+/* line 666, ../_dev/sass/style.scss */
 footer h3 {
   margin: 0 0 14px;
   font: normal 14px 'oswaldbook';
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 669, ../_dev/sass/style.scss */
+/* line 672, ../_dev/sass/style.scss */
 footer .footer-nav,
 footer .connect {
   float: left;
@@ -5317,51 +5325,51 @@ footer .connect {
   width: 25%;
 }
 @media screen and (max-width: 600px) {
-  /* line 669, ../_dev/sass/style.scss */
+  /* line 672, ../_dev/sass/style.scss */
   footer .footer-nav,
   footer .connect {
     width: 50%;
   }
 }
-/* line 674, ../_dev/sass/style.scss */
+/* line 677, ../_dev/sass/style.scss */
 footer .footer-nav ul,
 footer .connect ul {
   margin: -1px 0 0;
 }
-/* line 676, ../_dev/sass/style.scss */
+/* line 679, ../_dev/sass/style.scss */
 footer .footer-nav ul li,
 footer .connect ul li {
   font-size: 14px;
   line-height: 24px;
 }
-/* line 680, ../_dev/sass/style.scss */
+/* line 683, ../_dev/sass/style.scss */
 footer .footer-nav ul li a,
 footer .connect ul li a {
   color: #272727;
   text-decoration: none;
 }
-/* line 683, ../_dev/sass/style.scss */
+/* line 686, ../_dev/sass/style.scss */
 footer .footer-nav ul li a:hover,
 footer .connect ul li a:hover {
   color: #929292;
 }
-/* line 690, ../_dev/sass/style.scss */
+/* line 693, ../_dev/sass/style.scss */
 footer .footer-nav {
   padding-left: 0;
 }
-/* line 692, ../_dev/sass/style.scss */
+/* line 695, ../_dev/sass/style.scss */
 footer .footer-nav ul li {
   font-size: 13px;
 }
-/* line 696, ../_dev/sass/style.scss */
+/* line 699, ../_dev/sass/style.scss */
 footer .connect {
   padding-right: 0;
 }
-/* line 698, ../_dev/sass/style.scss */
+/* line 701, ../_dev/sass/style.scss */
 footer .connect ul li {
   overflow: hidden;
 }
-/* line 701, ../_dev/sass/style.scss */
+/* line 704, ../_dev/sass/style.scss */
 footer .connect ul li:before {
   float: left;
   padding: 1px 10px 0 0;
@@ -5381,23 +5389,23 @@ footer .connect ul li:before {
   font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
-/* line 720, ../_dev/sass/style.scss */
+/* line 723, ../_dev/sass/style.scss */
 footer .connect ul li:before a {
   float: left;
 }
-/* line 724, ../_dev/sass/style.scss */
+/* line 727, ../_dev/sass/style.scss */
 footer .connect ul li.facebook:before {
   content: 'facebook';
 }
-/* line 727, ../_dev/sass/style.scss */
+/* line 730, ../_dev/sass/style.scss */
 footer .connect ul li.pinterest:before {
   content: 'pinterest';
 }
-/* line 730, ../_dev/sass/style.scss */
+/* line 733, ../_dev/sass/style.scss */
 footer .connect ul li.twitter:before {
   content: 'twitter';
 }
-/* line 736, ../_dev/sass/style.scss */
+/* line 739, ../_dev/sass/style.scss */
 footer .mail-signup {
   float: left;
   direction: ltr;
@@ -5406,24 +5414,24 @@ footer .mail-signup {
   width: 50%;
 }
 @media screen and (max-width: 600px) {
-  /* line 736, ../_dev/sass/style.scss */
+  /* line 739, ../_dev/sass/style.scss */
   footer .mail-signup {
     width: 100%;
   }
 }
-/* line 740, ../_dev/sass/style.scss */
+/* line 743, ../_dev/sass/style.scss */
 footer .mail-signup p {
   font-size: 13px;
   line-height: 22px;
 }
-/* line 744, ../_dev/sass/style.scss */
+/* line 747, ../_dev/sass/style.scss */
 footer .mail-signup form {
   overflow: hidden;
   position: relative;
   margin: 18px 0 0;
   padding-right: 235px;
 }
-/* line 750, ../_dev/sass/style.scss */
+/* line 753, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="text"] {
   float: left;
   padding: 0 0 0 10px;
@@ -5438,11 +5446,11 @@ footer .mail-signup form input[type="text"] {
   outline: none;
   box-sizing: border-box;
 }
-/* line 760, ../_dev/sass/style.scss */
+/* line 763, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="text"]:focus {
   border: 1px solid #272727;
 }
-/* line 764, ../_dev/sass/style.scss */
+/* line 767, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="submit"] {
   position: absolute;
   top: 0;
@@ -5462,96 +5470,96 @@ footer .mail-signup form input[type="submit"] {
   -o-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
   transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
 }
-/* line 784, ../_dev/sass/style.scss */
+/* line 787, ../_dev/sass/style.scss */
 footer .mail-signup form input[type="submit"]:hover {
   background-color: #fff;
   color: #272727;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 792, ../_dev/sass/style.scss */
+  /* line 795, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 150px;
   }
-  /* line 795, ../_dev/sass/style.scss */
+  /* line 798, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 10px;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 801, ../_dev/sass/style.scss */
+  /* line 804, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 80px;
   }
-  /* line 804, ../_dev/sass/style.scss */
+  /* line 807, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 0px;
     width: 70px;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 811, ../_dev/sass/style.scss */
+  /* line 814, ../_dev/sass/style.scss */
   footer .mail-signup form {
     padding-right: 140px;
   }
-  /* line 814, ../_dev/sass/style.scss */
+  /* line 817, ../_dev/sass/style.scss */
   footer .mail-signup form input[type="submit"] {
     right: 0px;
   }
 }
-/* line 821, ../_dev/sass/style.scss */
+/* line 824, ../_dev/sass/style.scss */
 footer #mail-list {
   display: none;
 }
 @media screen and (min-width: 1025px) {
-  /* line 821, ../_dev/sass/style.scss */
+  /* line 824, ../_dev/sass/style.scss */
   footer #mail-list {
     display: block;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 821, ../_dev/sass/style.scss */
+  /* line 824, ../_dev/sass/style.scss */
   footer #mail-list {
     display: block;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 821, ../_dev/sass/style.scss */
+  /* line 824, ../_dev/sass/style.scss */
   footer #mail-list {
     display: block;
   }
 }
-/* line 827, ../_dev/sass/style.scss */
+/* line 830, ../_dev/sass/style.scss */
 footer #mail-list-mobile {
   padding-left: 0;
   padding-right: 0;
   margin: 28px 0 0;
 }
 @media screen and (min-width: 1025px) {
-  /* line 827, ../_dev/sass/style.scss */
+  /* line 830, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* line 827, ../_dev/sass/style.scss */
+  /* line 830, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  /* line 827, ../_dev/sass/style.scss */
+  /* line 830, ../_dev/sass/style.scss */
   footer #mail-list-mobile {
     display: none;
   }
 }
 
-/* line 840, ../_dev/sass/style.scss */
+/* line 843, ../_dev/sass/style.scss */
 #baseline {
   overflow: hidden;
   display: block;
   margin: 39px 0 40px;
 }
-/* line 845, ../_dev/sass/style.scss */
+/* line 848, ../_dev/sass/style.scss */
 #baseline #shop-details {
   float: left;
   direction: ltr;
@@ -5559,13 +5567,13 @@ footer #mail-list-mobile {
   padding-right: 20px;
   width: 50%;
 }
-/* line 847, ../_dev/sass/style.scss */
+/* line 850, ../_dev/sass/style.scss */
 #baseline #shop-details p {
   text-align: left;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 853, ../_dev/sass/style.scss */
+/* line 856, ../_dev/sass/style.scss */
 #baseline #payment-methods {
   float: left;
   direction: ltr;
@@ -5573,7 +5581,7 @@ footer #mail-list-mobile {
   padding-right: 20px;
   width: 50%;
 }
-/* line 855, ../_dev/sass/style.scss */
+/* line 858, ../_dev/sass/style.scss */
 #baseline #payment-methods img {
   float: right;
 }
