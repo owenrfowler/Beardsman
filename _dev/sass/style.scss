@@ -28,6 +28,50 @@ border-radius: $border-radius;
 -o-border-radius: $border-radius;
 }
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+};
+
+@mixin ssFont () {
+
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+
+  &:before {
+    display: none;
+    content: '';
+  } 
+
+  &:after {
+
+  }
+
+  // Possible fix for possible IE8 bug
+  &:hover {
+    -ms-zoom: 1; 
+  }
+
+}
+
+@mixin ss-AIR () {
+  @include ssFont;
+  font-family: "SSAir";
+}
+
 
 /*
 ***
@@ -585,6 +629,7 @@ Images column
 
           li {
             a {
+              @include ss-AIR;
               color: rgba(#fff, 0.15);
               font-size: 32px;
               cursor: pointer;
@@ -640,7 +685,7 @@ Images column
       } // #images 
 
       .text {
-        @include gridle( 12, mobile );
+        @include gridle( 12 );
         @include gridle( 6, tablet-portrait tablet-landscape desktop );
         @include gridle_state(mobile){
           text-align: left;  
@@ -654,209 +699,219 @@ Images column
 } // END SINGLE PRODUCT
 
 footer {
-clear: both;
-.footer-container {
-overflow: hidden;
-margin: 0 20px;
-padding: 46px 0;
-border-top: 1px solid #e3e3e3;
-border-bottom: 1px solid #e3e3e3;
-}
+  clear: both;
 
-h3 {
-margin: 0 0 14px;
-font: normal 14px 'oswaldbook';
-text-transform: uppercase;
-letter-spacing: 2px;
-}
-.footer-nav,
-.connect {
-@include gridle(3);
-@include gridle( 6, mobile );
+  .footer-container {
+    overflow: hidden;
+    margin: 0 20px;
+    padding: 46px 0;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+  }
 
-ul {
-margin: -1px 0 0;
-li {
-font-size: 14px;
-line-height: 24px;
+  h3 {
+    margin: 0 0 14px;
+    font: normal 14px 'oswaldbook';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .footer-nav,
+  .connect {
+    @include gridle(3);
+    @include gridle( 6, mobile );
 
-a {
-color: #272727;
-text-decoration: none;
-&:hover {
-color: #929292;
-}
-}
-}
-}
-}
-.footer-nav  {
-@include gridle_no_gutter(left);
-ul li {
-font-size: 13px;
-}
-}
-.connect {
-@include gridle_no_gutter(right);
-ul li {
-overflow: hidden;
+    ul {
+      margin: -1px 0 0;
+      li {
+        font-size: 14px;
+        line-height: 24px;
+        a {
+          color: #272727;
+          text-decoration: none;
+          &:hover {
+            color: #929292;
+          }
+        }
+      }
+    }
+  }
+  .footer-nav  {
+    @include gridle_no_gutter(left);
+    ul li {
+      font-size: 13px;
+    }
+  }
+  .connect {
+    @include gridle_no_gutter(right);
+    ul li {
+      overflow: hidden;
+      &:before {
+        float: left;
+        padding: 1px 10px 0 0;
+        color: #8f8f8f;
+        font-size: 13px;
+        font-family: "SSSocialRegular";
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        text-rendering: optimizeLegibility;
+        white-space: nowrap;
+        /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+        -moz-font-feature-settings: "liga=1";
+        -moz-font-feature-settings: "liga";
+        -ms-font-feature-settings: "liga" 1;
+        -o-font-feature-settings: "liga";
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
 
-&:before {
-float: left;
-padding: 1px 10px 0 0;
-color: #8f8f8f;
-font-size: 13px;
-font-family: "SSSocialRegular";
-font-style: normal;
-font-weight: normal;
-text-decoration: none;
-text-rendering: optimizeLegibility;
-white-space: nowrap;
-/*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
--moz-font-feature-settings: "liga=1";
--moz-font-feature-settings: "liga";
--ms-font-feature-settings: "liga" 1;
--o-font-feature-settings: "liga";
-font-feature-settings: "liga";
--webkit-font-smoothing: antialiased;
+        a {
+          float: left;
+        }  
+      }
+      &.facebook:before {
+        content: 'facebook';
+      }
+      &.pinterest:before {
+       content: 'pinterest';
+      }
+      &.twitter:before {
+        content: 'twitter';
+      }
+    }
+  }
 
-a {
-float: left;
-}  
-}
-&.facebook:before {
-content: 'facebook';
-}
-&.pinterest:before {
-content: 'pinterest';
-}
-&.twitter:before {
-content: 'twitter';
-}
-}
-}
+  .mail-signup {
+    @include gridle(6);
+    @include gridle( 12, mobile );
 
-.mail-signup {
-@include gridle(6);
-@include gridle( 12, mobile );
+    p {
+      font-size: 13px;
+      line-height: 22px;
+    }
+    form {
+      overflow: hidden;
+      position: relative;
+      margin: 18px 0 0;
+      padding-right: 235px;
 
-p {
-font-size: 13px;
-line-height: 22px;
-}
-form {
-overflow: hidden;
-position: relative;
-margin: 18px 0 0;
-padding-right: 235px;
+      input[type="text"]{
+        float: left;
+        padding: 0 0 0 10px;
+        width: 100%;
+        height: 40px;
+        border: 1px solid $divider;
+        @include border-radius (2px);
+        font: 14px/24px 'source_code_proregular';
+        outline: none;
+        box-sizing: border-box;
+  
+        &:focus {
+         border: 1px solid #272727;
+        }
+      }
+      input[type="submit"] {
+        position: absolute;
+        top: 0;
+        right: 95px;  
+        margin: 0 0 0 10px;
+        width: 130px;
+        height: 40px;
+        background-color: #272727;
+        border: 1px solid #272727;
+        color: #fff;
+        font: normal 13px 'oswaldbook';
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-sizing: border-box;
+        @include ceaser-transition(all, 500ms, $ease);
 
-input[type="text"]{
-float: left;
-padding: 0 0 0 10px;
-width: 100%;
-height: 40px;
-border: 1px solid $divider;
-@include border-radius (2px);
-font: 14px/24px 'source_code_proregular';
-outline: none;
-box-sizing: border-box;
-&:focus {
-border: 1px solid #272727;
-}
-}
-input[type="submit"] {
-position: absolute;
-top: 0;
-right: 95px;  
-margin: 0 0 0 10px;
-width: 130px;
-height: 40px;
-background-color: #272727;
-border: 1px solid #272727;
-color: #fff;
-font: normal 13px 'oswaldbook';
-text-align: center;
-text-transform: uppercase;
-cursor: pointer;
-box-sizing: border-box;
-@include ceaser-transition(all, 500ms, $ease);
-// -moz-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-// -webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-// transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        &:hover {
+          background-color: #fff;
+          color: #272727;
+        }
+      }
+    }
+    
+    @include gridle_state( tablet-landscape ){
+      form {
+        padding-right: 150px;
 
-&:hover {
+        input[type="submit"] {
+          right: 10px;
+        }  
+      }
+    }
+    @include gridle_state( tablet-portrait ){
+      form {
+        padding-right: 80px;
 
-background-color: #fff;
-color: #272727;
-}
-}
-}
-@include gridle_state( tablet-landscape ){
-form {
-padding-right: 150px;
+        input[type="submit"] {
+          right: 0px;
+          width: 70px;
+        }  
+      }
+    }
+    @include gridle_state( mobile ){
+      form {
+        padding-right: 140px;
 
-input[type="submit"] {
-right: 10px;
-}  
-}
-}
-@include gridle_state( tablet-portrait ){
-form {
-padding-right: 80px;
+        input[type="submit"] {
+          right: 0px;
+        }  
+      }
+    }
+  }
 
-input[type="submit"] {
-right: 0px;
-width: 70px;
-}  
-}
-}
-@include gridle_state( mobile ){
-form {
-padding-right: 140px;
+  #mail-list {
+    display: none;
+    
+    @include gridle_state( desktop tablet-landscape tablet-portrait ) {
+      display: block;
+    }
+  }
+  #mail-list-mobile {
+    @include gridle_no_gutter(left right);
+    margin: 28px 0 0;
 
-input[type="submit"] {
-right: 0px;
-}  
-}
-}
-}
-
-#mail-list {
-display: none;
-@include gridle_state( desktop tablet-landscape tablet-portrait ) {
-display: block;
-}
-}
-#mail-list-mobile {
-@include gridle_no_gutter(left right);
-margin: 28px 0 0;
-
-@include gridle_state( desktop tablet-landscape tablet-portrait ) {
-display: none;
-}
-}
+    @include gridle_state( desktop tablet-landscape tablet-portrait ) {
+      display: none;
+    }
+  }
 }
 
 // footer end
 
 
 #baseline {
-overflow: hidden;
-display: block;
-margin: 39px 0 40px;
+  overflow: hidden;
+  display: block;
+  margin: 39px 0 40px;
 
-#shop-details {
-@include gridle(6);
-p {
-text-align: left;
-font-size: 14px;
-line-height: 24px;
-}  
+  #shop-details {
+    @include gridle(6);
+  
+    p {
+      text-align: left;
+      font-size: 14px;
+      line-height: 24px;
+    }  
+  }
+
+  #payment-methods {
+    @include gridle(6);
+  
+    img {
+      float: right;
+    }
+  }
 }
-#payment-methods {
-@include gridle(6);
-img {
-float: right;
-}
-}
+
+
+// Contact page
+
+#contact-us {
+  form.contact-form {
+    
+  }
 }
