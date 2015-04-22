@@ -10,46 +10,57 @@
 
 <div id="page-body">
   <div class="content">
+    <form id="ContactForm" action="/contact" class="contact-form" method="post" accept-charset="UTF-8">
+      <input name="form_type" type="hidden" value="contact">
+      <input name="utf8" type="hidden" value="✓">
 
-        {% form 'contact' %}
-        {% if form.posted_successfully? %}
-        <div class="successForm feedback">
-          <p>{{ 'contact.form.post_success' | t }}</p>
-        </div>
-        {% endif %}
+      <fieldset>
 
-        {% if form.errors %}
-        <div class="errorForm feedback">
-          <p>{{ 'contact.form.post_error' | t }}</p>
-          {% for field in form.errors %}
-            <p>{{ 'contact.form.post_field_error_html' | t: field: field, error: form.errors.messages[field] }}</p>
-          {% endfor %}
-        </div>
-        {% endif %}
+        <label class="textInput">
+          <span>Name</span>
+          <input type="text" id="contactFormName" name="contact[name]" placeholder="{{ 'contact.placeholder.name' | t }}" />
+        </label>
 
-        <div id="contactFormWrapper">
-          <p>
-            <label>{{ 'contact.form.name' | t }}:</label><br/>
-            <input type="text" id="contactFormName" name="contact[name]" placeholder="{{ 'contact.placeholder.name' | t }}" />
-          </p>
-          <p>
-            <label>{{ 'contact.form.email' | t }}:</label><br/>
-            <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.placeholder.email' | t }}" />
-          </p>
-          <p>
-            <label>{{ 'contact.form.phone' | t }}:</label><br/>
-            <input type="telephone" id="contactFormTelephone" name="contact[phone]" placeholder="{{ 'contact.placeholder.phone' | t }}" />
-          </p> 
-          <p>
-            <label>{{ 'contact.form.message' | t }}:</label><br/>
-            <textarea rows="15" cols="75" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.placeholder.message' | t }}"></textarea>
-          </p>
-          <p>
-            <input type="submit" id="contactFormSubmit" value="{{ 'contact.form.send' | t }}" class="btn" />
-          </p>
-        </div>
-        {% endform %}
-        
+        <label class="textInput">
+          <span>Email</span>
+          <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.placeholder.email' | t }}" />
+        </label>
+
+        <label class="textInput">
+          <span>Phone Number</span>
+          <input type="telephone" id="contactFormTelephone" name="contact[phone]" placeholder="{{ 'contact.placeholder.phone' | t }}" />
+        </label>
+
+        <label class="textArea">
+          <span><span class="error-message-message"></span>Message</span>
+          <textarea id="contactFormMessage" name="contact[body]"
+            placeholder="Your Message"
+            data-parsley-error-message="Please enter a "
+            data-parsley-errors-container=".error-message-message"
+            required
+          ></textarea>
+        </label>
+
+        <input type="submit" id="contactFormSubmit" value="Send message" />
+
+      </fieldset>
+    </form>
+
+     {% comment %}
+       Form Errors
+     {% endcomment %}
+     <div class="errorForm feedback" id="ContactFormError" style="display:none">
+         <p>Oops, sorry. We were unable to submit your enquiry because of an error</p>
+     </div>
+
+
+    {% comment %}
+       Form Success
+     {% endcomment %}
+     <div class="successForm feedback" id="ContactFormSuccess" style="display:none">
+       <p>Thanks for contacting us! We'll get back to you as soon as possible.</p>
+     </div>
+
   </div>
 </div>
 

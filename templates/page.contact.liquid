@@ -20,27 +20,18 @@
         </div>
         {% endif %}
 
-        <div id="contactFormWrapper">
-          <p>
-            <label>{{ 'contact.form.name' | t }}:</label><br/>
-            <input type="text" id="contactFormName" name="contact[name]" placeholder="{{ 'contact.placeholder.name' | t }}" />
-          </p>
-          <p>
-            <label>{{ 'contact.form.email' | t }}:</label><br/>
-            <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.placeholder.email' | t }}" />
-          </p>
-          <p>
-            <label>{{ 'contact.form.phone' | t }}:</label><br/>
-            <input type="telephone" id="contactFormTelephone" name="contact[phone]" placeholder="{{ 'contact.placeholder.phone' | t }}" />
-          </p> 
-          <p>
-            <label>{{ 'contact.form.message' | t }}:</label><br/>
-            <textarea rows="15" cols="75" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.placeholder.message' | t }}"></textarea>
-          </p>
-          <p>
-            <input type="submit" id="contactFormSubmit" value="{{ 'contact.form.send' | t }}" class="btn" />
-          </p>
-        </div>
+        <fieldset>
+          <label>{{ 'contact.form.name' | t }}:</label>
+          <input type="text" id="contactFormName" name="contact[name]" placeholder="{{ 'contact.placeholder.name' | t }}" />
+          <label>{{ 'contact.form.email' | t }}:</label>
+          <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.placeholder.email' | t }}" />
+          <label>{{ 'contact.form.phone' | t }}:</label>
+          <input type="telephone" id="contactFormTelephone" name="contact[phone]" placeholder="{{ 'contact.placeholder.phone' | t }}" />
+          <label>{{ 'contact.form.message' | t }}:</label>
+          <textarea rows="15" cols="75" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.placeholder.message' | t }}"></textarea>
+          <input type="submit" id="contactFormSubmit" value="{{ 'contact.form.send' | t }}" class="btn" />
+        </fieldset>
+        
         {% endform %}
     </div>
   

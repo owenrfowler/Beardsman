@@ -911,7 +911,66 @@ footer {
 // Contact page
 
 #contact-us {
-  form.contact-form {
-    
+  .contact-form {
+    fieldset {
+      @include gridle (12);
+      @include gridle (8, tablet-landscape tablet-portrait );
+      @include gridle (6, desktop );
+
+
+      @include gridle_state( desktop tablet-landscape tablet-portrait ) {
+        @include gridle_centered ( );
+
+      }
+
+      label {
+        display: block;
+        overflow: hidden;
+        >span {
+          display: block;
+          font-size: 18px;
+          text-transform: uppercase;
+        }
+        input,
+        textarea {
+          display: block;
+          width: 100%;
+          margin: 10px 0 20px;
+          padding: 12px 18px;
+          border: 1px solid #e1e1df;
+          font: normal 18px "source_code_proregular";
+          box-sizing: border-box;
+          &:focus {
+            outline: none;
+            border: 1px solid #272727;
+          }
+        }
+        textarea {
+          height: 180px;
+        }
+        input[type="text"] {
+
+        }
+      }
+
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        background: #fff;
+        border: 1px solid #e1e1df;
+        @include border-radius(3px);
+        font: normal 18px "source_code_proregular";
+        text-align: center;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        cursor: pointer;
+        @include ceaser-transition(all, 500ms, $ease);
+        &:hover {
+          border-color: #272727;
+          color: #e1e1df;
+        }
+      }
+    }
   }
 }

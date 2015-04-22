@@ -256,18 +256,18 @@ var homePageCarousel = function( ){
                });
            }
 
-       }();
+      }();
 
        
-       var setImageContainer = function(){
+      var setImageContainer = function(){
 
-           var winWidth = $(window).width(),
-               width = 0;
+        var winWidth = $(window).width(),
+            width = 0;
             if($("#product .text").css('text-align') === "left"){
-               $('#page-body #images').css('width', winWidth);
-           } else {
-               $('#page-body #images').css('width', winWidth /2);
-           }
+              $('#page-body #images').css('width', winWidth);
+            } else {
+              $('#page-body #images').css('width', winWidth /2);
+            }
 
        };
 
