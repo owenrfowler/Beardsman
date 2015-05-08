@@ -72,6 +72,26 @@ border-radius: $border-radius;
   font-family: "SSAir";
 }
 
+@mixin button () {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 15px 30px;
+  background: #fff;
+  border: 1px solid #e1e1df;
+  @include border-radius(3px);
+  font: normal 18px "source_code_proregular";
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  cursor: pointer;
+  @include ceaser-transition(all, 500ms, $ease);
+  &:hover {
+    border-color: #272727;
+    color: #e1e1df;
+  }
+}
+
 
 /*
 ***
@@ -82,8 +102,6 @@ bootstrap overides
 .btn {
   @include border-radius(3px);
 }
-
-
 
 
 body {
@@ -99,15 +117,14 @@ body {
   display: block;
   overflow: hidden;
   margin: 0 auto;
-  padding: 0 20px;
   min-width: 480px;
   box-sizing: border-box;
-}
 
-#body {
-  margin: 0 0 40px;
-  position: relative;
-  clear: both;
+  #body {
+    margin: 0 0 40px;
+    position: relative;
+    @include clearfix ();
+  }
 }
 
 .content {
@@ -436,6 +453,7 @@ Carousel
               }
             }
             p {
+              margin: 0 0 34px;
               font: 300 20px/32px "oswaldbook";
               color: #7f7f7f;
 
@@ -445,7 +463,6 @@ Carousel
             }
             .button {
               display: inline-block;
-              margin: 34px 0 0;
               padding: 11px 53px 10px;
               text-align: center;
               border: 1px solid #4f4f4e;
@@ -590,7 +607,7 @@ Images column
       #images {
         @include gridle( 12 );
         @include gridle( 6, tablet-portrait tablet-landscape desktop );
-
+        margin-bottom: 50px;
         max-width: 100%;
         
         @include gridle_state( tablet-portrait tablet-landscape desktop ){
@@ -598,6 +615,18 @@ Images column
         }
 
         position: relative;
+
+        .owl-controls {
+          position: absolute;
+          margin-top: 10px;
+          width: 100%;
+          text-align: center;
+          z-index: 5;
+
+          .owl-page span{
+            border-color: #272727;
+          }
+        }
 
         .viewport {
           position: relative;
@@ -616,11 +645,8 @@ Images column
             }
           }
         }
-        .owl-controls {
-          position: absolute;
 
-          z-index: 5;
-        }
+        // Zoom button
         ul {
           position: absolute;
           bottom: 0px;
@@ -954,23 +980,20 @@ footer {
       }
 
       input[type="submit"] {
-        display: block;
+        @include button;
+        margin: 0;
         width: 100%;
-        padding: 8px 0;
-        background: #fff;
-        border: 1px solid #e1e1df;
-        @include border-radius(3px);
-        font: normal 18px "source_code_proregular";
-        text-align: center;
-        text-transform: uppercase;
-        box-sizing: border-box;
-        cursor: pointer;
-        @include ceaser-transition(all, 500ms, $ease);
-        &:hover {
-          border-color: #272727;
-          color: #e1e1df;
-        }
       }
     }
+  }
+}
+
+// Cart page
+
+.cart-empty-message {
+  @include gridle(12);
+  text-align: center;
+  a {
+    @include button ();
   }
 }

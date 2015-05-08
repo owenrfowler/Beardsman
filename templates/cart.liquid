@@ -1,21 +1,25 @@
-<div id="cart">
-  
-  <!-- Begin empty cart -->
-  {% if cart.item_count == 0 %}
-  <div class="row">
-    <div class="span12 expanded-message">
-      <br>
-      <br>
-      <h2 class="tc">{{ 'cart.general.empty' | t }}</h2>
+<div id="page-header">
+  <div class="content">
+    <div class="introduction">
+      <h1>Shopping Cart</h1>
     </div>
   </div>
+</div>
+  
+  <!-- Begin empty cart -->
+<div id="page-body">
+  <div class="content">
+  {% if cart.item_count == 0 %}
+  
+    <div class="cart-empty-message">
+      <p>Your cart appears to be suffereing from a bottomlesss hole&hellip;</p>
+      <a class="button" href="/collections/all">continue browsing</a>
+    </div>
   <!-- End empty cart -->
   
   <!-- Begin cart -->
   {% else %}
-  <div class="row">
-    <div class="span12">
-      <h1>{{ 'cart.general.title' | t }}</h1>
+
       <form action="/cart" method="post" id="cartform">
         <table>
           <thead>
@@ -85,12 +89,12 @@
         {% endif %}
 
       </form>
-    </div>
+    {% endif %}
   </div>
-  {% endif %}
+</div>
+  
   
   
   <!-- End cart -->
   
-</div> 
 
